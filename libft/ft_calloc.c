@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:31:01 by ckurt             #+#    #+#             */
-/*   Updated: 2020/11/26 13:52:19 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 10:15:58 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char			*array;
 
 	i = 0;
-	if (!(array = (malloc(sizeof(char) * (count * size)))))
+	if (!(array = (malloc(count * size))))
 		return (NULL);
 	ft_bzero(array, size * count);
 	return (array);

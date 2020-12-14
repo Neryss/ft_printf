@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/14 09:15:17 by ckurt            ###   ########lyon.fr   */
+/*   Created: 2020/11/28 16:16:54 by ckurt             #+#    #+#             */
+/*   Updated: 2020/11/28 16:30:36 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+void		ft_foreach(int *tab, int length, void (*f)(int))
+{
+	int		i;
 
-# include "../libft/libft.h"
-# include <stdarg.h>
-
-
-int	ft_printf(const char *, ...);
-
-#endif
+	i = -1;
+	while (++i < length)
+		(*f)(tab[i]);
+}

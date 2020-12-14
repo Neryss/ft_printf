@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:02:55 by ckurt             #+#    #+#             */
-/*   Updated: 2020/11/25 16:21:05 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/14 14:15:42 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			ft_atoi(const char *str)
 	neg = 0;
 	pos = 0;
 	res = 0;
-	i = check_white_spaces((char *)str, 0);
+	i = ft_check_white_spaces((char *)str, 0);
 	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i++] == '-')

@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/12 17:38:12 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/14 17:38:52 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,12 +60,17 @@ SRCS = ft_memset.c \
 		ft_tolower.c \
 		ft_atoi.c \
 		ft_strdup.c \
+		ft_strndup.c \
 		ft_calloc.c \
 		ft_strjoin.c \
 		ft_putchar_fd.c \
+		ft_putchar.c \
 		ft_putstr_fd.c \
+		ft_putstr.c \
 		ft_putendl_fd.c \
+		ft_putendl.c \
 		ft_putnbr_fd.c \
+		ft_putnbr.c \
 		ft_split.c \
 		ft_substr.c \
 		ft_strtrim.c\
@@ -73,34 +78,38 @@ SRCS = ft_memset.c \
 		ft_strmapi.c \
 		ft_check_whitespaces.c \
 		ft_strcat.c \
-		ft_lstnew_bonus.c \
-		ft_lstadd_front_bonus.c \
-		ft_lstsize_bonus.c \
-		ft_lstlast_bonus.c \
-		ft_lstadd_back_bonus.c \
-		ft_lstdelone_bonus.c \
-		ft_lstiter_bonus.c \
-		ft_lstmap_bonus.c \
-		ft_lstclear_bonus.c
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
+		ft_lstclear.c \
+		ft_foreach.c \
+		ft_freeall.c \
+		ft_isalnum.c \
+		ft_split_charset.c
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
-	@printf "Compiling $(_BLUE)owo $(_END)$<\n" | tr "lr" "w"
+	@printf "$(_CYAN) [+] $(_END) Compiling $(_BLUE)owo $(_END)$<\n" | tr "lr" "w"
 	@$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(LIBC) $(NAME) $(OBJS)
-	@echo "Fwinished uwu!"
+	@$(LIBC) $(NAME) $(OBJS)
+	@printf " $(_GREEN)=>$(_END) Fwinished uwu!\n"
 
 re: fclean
-	$(MAKE) all
+	@$(MAKE) all
 
 clean:
-	rm -f $(OBJS) $(BONUS_OBJS)
+	@rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 .PHONY: clean fclean re all

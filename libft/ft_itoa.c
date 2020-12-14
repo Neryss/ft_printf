@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 14:50:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/11/25 15:47:45 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/11/30 12:49:02 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ char			*ft_itoa(int n)
 	count = ft_itoa_getsize(n);
 	if (tmp < 0 || count == 0)
 		count++;
-	if (!(res = malloc(sizeof(char) * (count + 1))))
+	if (!(res = calloc(count + 1, sizeof(char))))
 		return (NULL);
-	ft_bzero(res, count + 1);
 	i = 0;
 	if (tmp < 0)
 	{

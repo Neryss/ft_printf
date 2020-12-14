@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 08:53:38 by ckurt             #+#    #+#             */
-/*   Updated: 2020/11/25 16:35:53 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/03 09:15:06 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char			**ft_split(char const *s, char c)
 			i++;
 		if (!(tab[k] = (char *)malloc(sizeof(char) *
 			(get_word_length((char *)s, c, i) + 1))))
-			return (0);
+			return (ft_freeall(tab, k));
 		while (s[i] != c && s[i])
 			tab[k][j++] = s[i++];
 		tab[k++][j] = '\0';

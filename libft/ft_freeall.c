@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_freeall.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/14 09:15:17 by ckurt            ###   ########lyon.fr   */
+/*   Created: 2020/11/27 10:04:54 by ckurt             #+#    #+#             */
+/*   Updated: 2020/11/27 10:59:58 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <stdarg.h>
+void	*ft_freeall(char **tab, int size)
+{
+	int i;
 
-
-int	ft_printf(const char *, ...);
-
-#endif
+	i = 0;
+	while (i < size)
+		free(tab[i]);
+	free(tab);
+	return (NULL);
+}
