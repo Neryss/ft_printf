@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/12 17:39:37 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/14 17:39:56 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/15 13:25:44 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(NAME): $(OBJS)
 	@$(LIBC) $(NAME) $(OBJS)
 
 test: $(NAME)
-	$(CC) -L ./ $(NAME) && ./a.out
+	$(CC) -L ./ $(NAME) src/main.c && ./a.out
 
 re: fclean
 	@$(MAKE) all

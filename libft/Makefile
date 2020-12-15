@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/14 17:38:52 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/15 17:41:13 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,7 +90,12 @@ SRCS = ft_memset.c \
 		ft_foreach.c \
 		ft_freeall.c \
 		ft_isalnum.c \
-		ft_split_charset.c
+		ft_split_charset.c \
+		ft_convert_base1.c \
+		ft_convert_base2.c \
+		ft_putnbr_base.c \
+		ft_atoi_base.c \
+		ft_ischarset.c
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
