@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/15 17:41:13 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/16 15:32:21 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SRCS = ft_memset.c \
 		ft_strlen.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
+		ft_strncat.c \
 		ft_strchr.c \
 		ft_strrchr.c \
 		ft_strnstr.c \
@@ -95,7 +96,8 @@ SRCS = ft_memset.c \
 		ft_convert_base2.c \
 		ft_putnbr_base.c \
 		ft_atoi_base.c \
-		ft_ischarset.c
+		ft_ischarset.c \
+		ft_nblen.c
 OBJS = $(SRCS:.c=.o)
 
 .c.o:

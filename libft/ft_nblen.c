@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_nblen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/28 16:22:19 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/16 13:41:01 by ckurt            ###   ########lyon.fr   */
+/*   Created: 2020/12/16 14:55:52 by ckurt             #+#    #+#             */
+/*   Updated: 2020/12/16 14:57:28 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char *s)
+size_t	ft_nblen(int n)
 {
-	return (write(1, s, ft_strlen(s)));
+	int	count;
+
+	count = 0;
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
 }

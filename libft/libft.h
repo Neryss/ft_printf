@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:49:05 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/15 17:38:58 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/16 14:57:43 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,6 @@ char				*ft_putnbr_base(int nb, char *base);
 char				*ft_itoa(int n);
 void				*ft_calloc(size_t count, size_t size);
 void				*ft_freeall(char **tab, int size);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putchar(char c);
-void				ft_putstr_fd(char *s, int fd);
-void				ft_putstr(char *s);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putendl(char *s);
 void				ft_putnbr_fd(int n, int fd);
@@ -65,6 +61,10 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_foreach(int *tab, int length, void (*f)(int));
 void				ft_swap(char *a, char *b);
 void				ft_rev_tab(char *tab);
+int					ft_putchar(char c);
+int					ft_putstr_fd(char *s, int fd);
+int					ft_putchar_fd(char c, int fd);
+int					ft_putstr(char *s);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_is_in_base(char c, char *base);
 int					ft_check_base(char *base);
@@ -85,6 +85,7 @@ int					ft_ischarset(char c, const char *str);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t				ft_nblen(int n);
 t_list				*ft_lstnew(void *content);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
