@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 19:32:47 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 20:51:36 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,6 @@ void	debug_struct(s_element *elem)
 	ft_putstr("\n| END |\n\n");
 }
 
-int	check_minus(char c, s_element *elem)
-{
-	if (c == '-')
-	{
-		elem->left_justify = 1;
-		return (1);
-	}
-	return (0);
-}
-
 int			get_minus_len(const char *str, int i)
 {
 	int		res;
@@ -68,20 +58,6 @@ int			get_minus_len(const char *str, int i)
 		i++;
 	}
 	return (res);
-}
-
-size_t	ft_strlentil(const char *str, char c)
-{
-	int i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (i);
-		i++;
-	}
-	return (0);
 }
 
 int	get_elem_len(const char *str, int i)

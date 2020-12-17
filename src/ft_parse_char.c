@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 20:40:51 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 20:50:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	is_minus_in_str(const char *str, s_element *elem, int i)
+int	check_minus(const char *str, s_element *elem, int i)
 {
 	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
 	{
@@ -73,12 +73,10 @@ int	check_flags(const char *str, s_element *elem)
 	int i;
 
 	i = 0;
-	// printf("str[%c]\n", *str);
-	is_minus_in_str(str, elem, i);
+	check_minus(str, elem, i);
 	check_zero(str, elem);
 	elem->width = special_atoi(str);
 	i = get_memberlen(str, i);
-	// printf("i is : %d\n", i);
 	if (i == 0)
 		return (1);
 	return (i);
