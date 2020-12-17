@@ -1,1 +1,0 @@
-clear && make -j8 re && gcc -L ./ libftprintf.a && ./a.out

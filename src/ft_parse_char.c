@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/16 17:48:11 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:20:52 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,9 @@ int	ft_parse_char(const char *str, s_element *elem, va_list valist)
 	int	i;
 
 	i = 0;
-	// str++;
 	(void)str;
 	// if (elem->width != 0)
-		print_width(elem->width - 1, elem->zero);
+	print_width(elem->width - 1, elem->zero);
 	ft_putchar(va_arg(valist, int));
 	i++;
 	return (i);

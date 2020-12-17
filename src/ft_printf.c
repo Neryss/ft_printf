@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/16 17:52:15 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 09:58:44 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int parse_str(va_list valist, const char *str, s_element *elem)
 {
 	while (*str)
 	{
-		init_struct(elem);
 		if (*str == '%')
 		{
+			init_struct(elem);
 			str += check_flags(str, elem, valist);
 			str += select_parsing(valist, str, elem);
 		}
