@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 10:47:49 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 12:07:47 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	(void)valist;
 	i = 0;
 	str++;
-	if (*str == '-')
-	{
-		elem->left_justify = 1;
+	if (str += check_minus(*str, elem))
 		i++;
-		str++;
-	}
 	if (ft_isdigit(*str))
 	{
 		if (*str == '0')
@@ -34,6 +30,8 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 		elem->width = ft_atoi(str);
 		i += ft_nblen(ft_atoi(str)) + 1;
 	}
+	if (i == 0)
+		return (1);
 	return (i);
 }
 

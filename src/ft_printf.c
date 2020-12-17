@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 09:58:44 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 11:31:25 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int parse_str(va_list valist, const char *str, s_element *elem)
 			str += check_flags(str, elem, valist);
 			str += select_parsing(valist, str, elem);
 		}
+
 		ft_putchar(*str++);
 	}
 	return (0);
