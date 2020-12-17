@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 13:57:02 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 14:49:46 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,14 @@ int	check_flags(const char *str, s_element *elem)
 			elem->zero = 1;
 			i++;
 		}
-		if (elem->left_justify)
-			elem->width = get_minus_len(str, i - 1);
-		else
+		if (check_minus(str[i], elem))
 			elem->width = get_minus_len(str, i);
+		else
+			elem->width = get_minus_len(str, i - 1);
 		// printf("str [%c]\n", str[i]);
-		// printf("str - 1 [%c]\n", str[i - 1]);
-		// printf("elem width = %d", elem->width);
-		i += ft_nblen(ft_atoi(str)) + 1;
-		// printf("i is %d\n", i);
+		i += get_elem_len(str, i);
+		// printf("i is %d", i);
+		// printf("str (%c)\n", str[i]);
 	}
 	if (i == 0)
 		return (1);
@@ -53,6 +52,7 @@ int	ft_parse_char(const char *str, s_element *elem, va_list valist)
 	(void)str;
 	if (elem->left_justify == 1)
 	{
+		// printf("justified\n");
 		ft_putchar(va_arg(valist, int));
 		print_width(elem->width - 1, elem->zero, elem->left_justify);
 	}

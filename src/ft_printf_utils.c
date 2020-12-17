@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 13:52:58 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 14:25:27 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,30 @@ int			get_minus_len(const char *str, int i)
 	return (res);
 }
 
+size_t	ft_strlentil(const char *str, char c)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			return (i);
+		i++;
+	}
+	return (0);
+}
+
+int	get_elem_len(const char *str, int i)
+{
+	while (str[i])
+	{
+		if (str[i] == 'c')
+			return (i);
+		i++;
+	}
+	return (0);
+}
 
 int	print_width(int width, int has_zero, int left_justify)
 {
