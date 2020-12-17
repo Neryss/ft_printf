@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 13:40:20 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:57:02 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,15 @@ int	check_flags(const char *str, s_element *elem)
 			elem->zero = 1;
 			i++;
 		}
-		elem->width = get_minus_len(str);
-		i += ft_nblen(get_minus_len(str)) + 1;
+		if (elem->left_justify)
+			elem->width = get_minus_len(str, i - 1);
+		else
+			elem->width = get_minus_len(str, i);
+		// printf("str [%c]\n", str[i]);
+		// printf("str - 1 [%c]\n", str[i - 1]);
+		// printf("elem width = %d", elem->width);
+		i += ft_nblen(ft_atoi(str)) + 1;
+		// printf("i is %d\n", i);
 	}
 	if (i == 0)
 		return (1);
