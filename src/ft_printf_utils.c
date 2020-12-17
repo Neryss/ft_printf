@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 15:35:24 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 19:32:47 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int			get_minus_len(const char *str, int i)
 	res = 0;
 	while (!ft_isdigit(str[i]))
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
 		res = res * 10 + (str[i] - 48);
 		i++;

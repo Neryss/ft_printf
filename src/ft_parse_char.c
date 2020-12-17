@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 15:36:04 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 20:40:51 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_minus_in_str(const char *str, s_element *elem, int i)
 {
-	while (str[i])
+	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
 	{
 		if (str[i] == '-')
 		{
@@ -23,39 +23,62 @@ int	is_minus_in_str(const char *str, s_element *elem, int i)
 		}
 		i++;
 	}
+	return (-1);
+}
+
+int	check_zero(const char *str, s_element *elem)
+{
+	int i;
+
+	i = 0;
+	while (!ft_isdigit(str[i]))
+		i++;
+	if (str[i] == '0')
+	{
+		elem->zero = 1;
+		return (1);
+	}
 	return (0);
+}
+
+int	special_atoi(const char *str)
+{
+	int i;
+	int res;
+
+	i = 0;
+	res = 0;
+	//might need to add whitespaces later
+	//not sure about the '%'
+	while (str[i] == '0' || str[i] == '-' || str[i] == '%')
+		i++;
+	while (ft_isdigit(str[i]))
+	{
+
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res);
+}
+
+int	get_memberlen(const char *str, int i)
+{
+	while (!ft_ischarset(str[i], ARGUMENTS) && str[i])
+		i++;
+	return (i);
 }
 
 int	check_flags(const char *str, s_element *elem)
 {
 	int i;
-	int	minus;
 
 	i = 0;
-	str++;
-	if (check_minus(*str, elem))
-	{
-		str++;
-		i++;
-	}
-	if (ft_isdigit(*str))
-	{
-		if (*str == '0')
-		{
-			elem->zero = 1;
-			i++;
-		}
-		minus = is_minus_in_str(str, elem, i);
-		i += minus;
-		elem->width = get_minus_len(str, i);
-		// if (check_minus(str[i], elem))
-		// 	elem->width = get_minus_len(str, i);
-		// elem->width = get_minus_len(str, i - 1);
-		i += get_elem_len(str, i);
-		i++;
-		// printf("i is %d", i);
-		// printf("str (%c)\n", str[i]);
-	}
+	// printf("str[%c]\n", *str);
+	is_minus_in_str(str, elem, i);
+	check_zero(str, elem);
+	elem->width = special_atoi(str);
+	i = get_memberlen(str, i);
+	// printf("i is : %d\n", i);
 	if (i == 0)
 		return (1);
 	return (i);
