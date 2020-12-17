@@ -6,20 +6,23 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 12:07:47 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:29:16 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	check_flags(const char *str, s_element *elem, va_list valist)
+int	check_flags(const char *str, s_element *elem)
 {
 	int i;
-	(void)valist;
+
 	i = 0;
 	str++;
-	if (str += check_minus(*str, elem))
+	if (check_minus(*str, elem))
+	{
+		str++;
 		i++;
+	}
 	if (ft_isdigit(*str))
 	{
 		if (*str == '0')

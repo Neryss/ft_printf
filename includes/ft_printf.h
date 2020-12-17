@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 10:44:33 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 12:34:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,16 @@ typedef struct t_element
 	int		width;
 	int		field;
 	int		period;
-	char	type;
+	int		type;
 }				s_element;
 
 int		ft_printf(const char *, ...);
 int		print_width(int width, int has_zero, int left_justify);
 int		check_minus(char c, s_element *elem);
 void	init_struct(s_element *elem);
+void	debug_struct(s_element *elem);
 int		ft_parse_char(const char *str, s_element *elem, va_list valist);
 int		select_parsing(va_list valist, const char *str, s_element *elem);
-int		check_flags(const char *str, s_element *elem, va_list valist);
+int		check_flags(const char *str, s_element *elem);
 
 #endif

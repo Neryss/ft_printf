@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 12:08:04 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 12:58:54 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,28 @@ void	init_struct(s_element *elem)
 	elem->period = 0;
 	elem->sign = 0;
 	elem->type = 0;
+}
+
+void	debug_struct(s_element *elem)
+{
+	ft_putstr("| ELEMENT |\n");
+	ft_putstr("| ------- |\n");
+	ft_putstr("|Zero : ");
+	ft_putnbr(elem->zero);
+	ft_putstr("|\n|Width : ");
+	ft_putnbr(elem->width);
+	ft_putstr("|\n|Field : ");
+	ft_putnbr(elem->field);
+	ft_putstr("|\n|Justify : ");
+	ft_putnbr(elem->left_justify);
+	ft_putstr("|\n|Period : ");
+	ft_putnbr(elem->period);
+	ft_putstr("|\n|Sign : ");
+	ft_putnbr(elem->sign);
+	ft_putstr("|\n|Type : ");
+	ft_putnbr(elem->type);
+	ft_putstr("|\n| ------ |");
+	ft_putstr("\n| END |\n\n");
 }
 
 int	check_minus(char c, s_element *elem)
