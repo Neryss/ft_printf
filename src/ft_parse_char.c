@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 10:20:52 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:47:49 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	(void)valist;
 	i = 0;
 	str++;
+	if (*str == '-')
+	{
+		elem->left_justify = 1;
+		i++;
+		str++;
+	}
 	if (ft_isdigit(*str))
 	{
 		if (*str == '0')
@@ -37,9 +43,16 @@ int	ft_parse_char(const char *str, s_element *elem, va_list valist)
 
 	i = 0;
 	(void)str;
-	// if (elem->width != 0)
-	print_width(elem->width - 1, elem->zero);
-	ft_putchar(va_arg(valist, int));
+	if (elem->left_justify == 1)
+	{
+		ft_putchar(va_arg(valist, int));
+		print_width(elem->width - 1, elem->zero, elem->left_justify);
+	}
+	else
+	{
+		print_width(elem->width - 1, elem->zero, elem->left_justify);
+		ft_putchar(va_arg(valist, int));
+	}
 	i++;
 	return (i);
 }

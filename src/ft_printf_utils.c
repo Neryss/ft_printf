@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/16 17:52:30 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 10:44:15 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,23 @@ void	init_struct(s_element *elem)
 	elem->type = 0;
 }
 
-int	print_width(int width, int has_zero)
+int	check_minus(char c, s_element *elem)
+{
+	if (c == '-')
+	{
+		elem->left_justify = 1;
+		return (1);
+	}
+	return (0);
+}
+
+int	print_width(int width, int has_zero, int left_justify)
 {
 	int		i;
 	char	c;
 
 	c = ' ';
-	if (has_zero)
+	if (has_zero && !left_justify)
 		c = '0';
 	i = 0;
 	while (i < width)
