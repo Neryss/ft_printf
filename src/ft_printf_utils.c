@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 12:58:54 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:39:44 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,24 @@ int	check_minus(char c, s_element *elem)
 	}
 	return (0);
 }
+
+int			get_minus_len(const char *str)
+{
+	int		i;
+	int		res;
+
+	res = 0;
+	i = ft_check_white_spaces((char *)str, 0);
+	while (!ft_isdigit(str[i]))
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10 + (str[i] - 48);
+		i++;
+	}
+	return (res);
+}
+
 
 int	print_width(int width, int has_zero, int left_justify)
 {

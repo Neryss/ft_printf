@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 13:29:16 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 13:40:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	check_flags(const char *str, s_element *elem)
 			elem->zero = 1;
 			i++;
 		}
-		elem->width = ft_atoi(str);
-		i += ft_nblen(ft_atoi(str)) + 1;
+		elem->width = get_minus_len(str);
+		i += ft_nblen(get_minus_len(str)) + 1;
 	}
 	if (i == 0)
 		return (1);
