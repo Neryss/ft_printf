@@ -6,15 +6,30 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 14:49:46 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 15:36:04 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
+int	is_minus_in_str(const char *str, s_element *elem, int i)
+{
+	while (str[i])
+	{
+		if (str[i] == '-')
+		{
+			elem->left_justify = 1;
+			return (i);
+		}
+		i++;
+	}
+	return (0);
+}
+
 int	check_flags(const char *str, s_element *elem)
 {
 	int i;
+	int	minus;
 
 	i = 0;
 	str++;
@@ -30,12 +45,14 @@ int	check_flags(const char *str, s_element *elem)
 			elem->zero = 1;
 			i++;
 		}
-		if (check_minus(str[i], elem))
-			elem->width = get_minus_len(str, i);
-		else
-			elem->width = get_minus_len(str, i - 1);
-		// printf("str [%c]\n", str[i]);
+		minus = is_minus_in_str(str, elem, i);
+		i += minus;
+		elem->width = get_minus_len(str, i);
+		// if (check_minus(str[i], elem))
+		// 	elem->width = get_minus_len(str, i);
+		// elem->width = get_minus_len(str, i - 1);
 		i += get_elem_len(str, i);
+		i++;
 		// printf("i is %d", i);
 		// printf("str (%c)\n", str[i]);
 	}

@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 14:25:51 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/17 15:35:19 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int		check_minus(char c, s_element *elem);
 int		get_minus_len(const char *str, int i);
 size_t	ft_strlentil(const char *str, char c);
 int	get_elem_len(const char *str, int i);
+int	is_minus_in_str(const char *str, s_element *elem, int i);
 void	init_struct(s_element *elem);
 void	debug_struct(s_element *elem);
 int		ft_parse_char(const char *str, s_element *elem, va_list valist);

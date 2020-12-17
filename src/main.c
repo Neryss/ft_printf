@@ -6,7 +6,7 @@ int main(void)
 	printf("test\n");
 	// ft_printf("c is : %12c\nand %0c\nand %-23c yeah\n", 'j', 'r', 'y');
 	// printf("c is : %12c\nand %0c\nand %-23c yeah\n", 'j', 'r', 'y');
-	ft_printf("mine\n %014c oy\n %06c eheh\n", '1', 'j');
-	printf("printf\n %014c oy\n %06c eheh\n", '1', 'j');
+	ft_printf("mine\n %14c oy\n %6c eheh\n", '1', 'j');
+	printf("printf\n %14c oy\n %6c eheh\n", '1', 'j');
 	return (0);
 }
