@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 17:06:13 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 17:15:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_zero(const char *str, s_element *elem)
 	return (0);
 }
 
-int	check_star_dot(char **str, s_element *elem)
+int	check_star_dot(const char **str, s_element *elem)
 {
 	while (**str == '*' || **str == '.')
 	{
@@ -58,7 +58,7 @@ int	check_star_dot(char **str, s_element *elem)
 }
 
 
-int	check_min_zero(char **str, s_element *elem)
+int	check_min_zero(const char **str, s_element *elem)
 {
 	while (**str == '-' || **str == '0')
 	{
