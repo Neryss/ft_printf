@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 19:01:47 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 20:16:42 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,6 @@ void	debug_struct(s_element *elem)
 	ft_putnbr(elem->star);
 	ft_putstr("|\n| ------ |");
 	ft_putstr("\n| END |\n\n");
-}
-
-int	get_elem_len(const char *str, int i)
-{
-	while (str[i])
-	{
-		if (str[i] == 'c')
-			return (i);
-		i++;
-	}
-	return (0);
 }
 
 int	check_flags(const char *str, s_element *elem, va_list valist)

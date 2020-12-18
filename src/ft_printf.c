@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 18:44:02 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 20:18:30 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int parse_str(va_list valist, const char *str, s_element *elem)
 		{
 			init_struct(elem);
 			str += check_flags(str, elem, valist) + 1;
-			print += select_parsing(valist, str, elem);
+			print += select_parsing(valist, elem);
 		}
 		else
 		{
@@ -34,18 +34,14 @@ int parse_str(va_list valist, const char *str, s_element *elem)
 	return (print);
 }
 
-int	select_parsing(va_list valist, const char *str, s_element *elem)
+int	select_parsing(va_list valist, s_element *elem)
 {
 	int i;
 
 	i = 0;
 	// debug_struct(elem);
 	if (elem->type == 'c')
-	{
-		i = ft_parse_char(str, elem, valist);
-		// printf ("i in select = %d", i);
-		return (i);
-	}
+		return (ft_parse_char(elem, valist));
 	return (0);
 }
 
