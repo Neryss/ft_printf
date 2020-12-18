@@ -6,14 +6,17 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 09:35:56 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 10:28:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int	check_minus(const char *str, s_element *elem, int i)
+int	check_minus(const char *str, s_element *elem)
 {
+	int i;
+
+	i = 0;
 	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
 	{
 		if (str[i] == '-')
@@ -46,7 +49,7 @@ int	check_star(const char *str, s_element *elem)
 	int i;
 
 	i = 0;
-	while (str[i] && ft_ischarset(str[i], ARGUMENTS))
+	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
 	{
 		if (str[i] == '*')
 		{

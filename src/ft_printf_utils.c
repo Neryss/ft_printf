@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 09:48:15 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 10:35:18 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	debug_struct(s_element *elem)
 	ft_putnbr(elem->sign);
 	ft_putstr("|\n|Type : ");
 	ft_putnbr(elem->type);
+	ft_putstr("|\n|Star : ");
+	ft_putnbr(elem->star);
 	ft_putstr("|\n| ------ |");
 	ft_putstr("\n| END |\n\n");
 }
