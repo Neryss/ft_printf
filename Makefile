@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/12 17:39:37 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/16 16:00:03 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/18 09:45:35 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LIBC = ar rcs
 NAME = libftprintf.a
-SRCS = src/ft_printf.c src/ft_printf_utils.c src/ft_parse_char.c
+SRCS = src/ft_printf.c src/ft_printf_utils.c src/ft_parse_char.c src/ft_checks.c
 OBJS = $(SRCS:.c=.o)
 
 .c.o:

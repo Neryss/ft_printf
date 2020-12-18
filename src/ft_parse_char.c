@@ -6,40 +6,11 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 20:50:20 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 09:45:07 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-int	check_minus(const char *str, s_element *elem, int i)
-{
-	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
-	{
-		if (str[i] == '-')
-		{
-			elem->left_justify = 1;
-			return (i);
-		}
-		i++;
-	}
-	return (-1);
-}
-
-int	check_zero(const char *str, s_element *elem)
-{
-	int i;
-
-	i = 0;
-	while (!ft_isdigit(str[i]))
-		i++;
-	if (str[i] == '0')
-	{
-		elem->zero = 1;
-		return (1);
-	}
-	return (0);
-}
 
 int	special_atoi(const char *str)
 {
@@ -75,6 +46,7 @@ int	check_flags(const char *str, s_element *elem)
 	i = 0;
 	check_minus(str, elem, i);
 	check_zero(str, elem);
+	check_star(str, elem);
 	elem->width = special_atoi(str);
 	i = get_memberlen(str, i);
 	if (i == 0)
@@ -92,11 +64,11 @@ int	ft_parse_char(const char *str, s_element *elem, va_list valist)
 	{
 		// printf("justified\n");
 		ft_putchar(va_arg(valist, int));
-		print_width(elem->width - 1, elem->zero, elem->left_justify);
+		print_width(elem);
 	}
 	else
 	{
-		print_width(elem->width - 1, elem->zero, elem->left_justify);
+		print_width(elem);
 		ft_putchar(va_arg(valist, int));
 	}
 	i++;

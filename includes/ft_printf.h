@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 22:02:55 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 09:37:17 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft/libft.h"
 # include <stdarg.h>
-# define ARGUMENTS "cspdiuxX%"
+# define ARGUMENTS "cspdiuxX"
 
 typedef struct t_element
 {
@@ -24,13 +24,17 @@ typedef struct t_element
 	int		sign;
 	int		width;
 	int		field;
-	int		period;
+	int		dot;
 	int		type;
+	int		star;
 }				s_element;
 
 int		ft_printf(const char *, ...);
-int		print_width(int width, int has_zero, int left_justify);
+int		print_width(s_element *elem);
+int		check_flags(const char *str, s_element *elem);
 int		check_minus(const char *str, s_element *elem, int i);
+int		check_zero(const char *str, s_element *elem);
+int		check_star(const char *str, s_element *elem);
 int		special_atoi(const char *str);
 int		get_minus_len(const char *str, int i);
 int		get_elem_len(const char *str, int i);
@@ -38,6 +42,5 @@ void	init_struct(s_element *elem);
 void	debug_struct(s_element *elem);
 int		ft_parse_char(const char *str, s_element *elem, va_list valist);
 int		select_parsing(va_list valist, const char *str, s_element *elem);
-int		check_flags(const char *str, s_element *elem);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/17 20:57:03 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 09:48:15 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void	init_struct(s_element *elem)
 	elem->width = 0;
 	elem->field = 0;
 	elem->left_justify = 0;
-	elem->period = 0;
+	elem->dot = 0;
 	elem->sign = 0;
 	elem->type = 0;
+	elem->star = 0;
 }
 
 void	debug_struct(s_element *elem)
@@ -35,8 +36,8 @@ void	debug_struct(s_element *elem)
 	ft_putnbr(elem->field);
 	ft_putstr("|\n|Justify : ");
 	ft_putnbr(elem->left_justify);
-	ft_putstr("|\n|Period : ");
-	ft_putnbr(elem->period);
+	ft_putstr("|\n|Dot : ");
+	ft_putnbr(elem->dot);
 	ft_putstr("|\n|Sign : ");
 	ft_putnbr(elem->sign);
 	ft_putstr("|\n|Type : ");
@@ -71,16 +72,16 @@ int	get_elem_len(const char *str, int i)
 	return (0);
 }
 
-int	print_width(int width, int has_zero, int left_justify)
+int	print_width(s_element *elem)
 {
 	int		i;
 	char	c;
 
 	c = ' ';
-	if (has_zero && !left_justify)
+	if (elem->zero && !elem->left_justify)
 		c = '0';
 	i = 0;
-	while (i < width)
+	while (i < elem->width - 1)
 	{
 		ft_putchar(c);
 		i++;
