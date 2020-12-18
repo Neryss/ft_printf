@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 14:52:00 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 17:06:59 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,17 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	int i;
 
 	i = 0;
-	check_minus(str, elem);
-	check_zero(str, elem);
-	check_star(str, elem);
+	check_min_zero((char **)&str, elem);
+	check_star_dot((char **)&str, elem);
 	if (elem->star)
 		elem->width = va_arg(valist, int);
 	else
 		elem->width = special_atoi(str);
+	if (elem->width < 0)
+	{
+		elem->width = -elem->width;
+		elem->left_justify = 1;
+	}
 	i = get_memberlen(str, elem, i);
 	if (i == 0)
 		return (1);
