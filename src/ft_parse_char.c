@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 10:49:51 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 13:30:21 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	else
 		elem->width = special_atoi(str);
 	i = get_memberlen(str, i);
+	printf("i is {%d}", i);
 	if (i == 0)
 		return (1);
 	return (i);
@@ -68,14 +69,13 @@ int	ft_parse_char(const char *str, s_element *elem, va_list valist)
 	(void)str;
 	if (elem->left_justify == 1)
 	{
-		ft_putchar(va_arg(valist, int));
-		print_width(elem);
+		i += ft_putchar(va_arg(valist, int));
+		i += print_width(elem);
 	}
 	else
 	{
-		print_width(elem);
-		ft_putchar(va_arg(valist, int));
+		i += print_width(elem);
+		i += ft_putchar(va_arg(valist, int));
 	}
-	i++;
 	return (i);
 }

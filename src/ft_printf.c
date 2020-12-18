@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 10:30:44 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 13:32:03 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 int parse_str(va_list valist, const char *str, s_element *elem)
 {
+	int	print;
+
+	print = 0;
 	while (*str)
 	{
 		if (*str == '%')
 		{
 			init_struct(elem);
 			str += check_flags(str, elem, valist);
-			str += select_parsing(valist, str, elem);
+			print += select_parsing(valist, str, elem);
+			str += print;
 		}
-
 		ft_putchar(*str++);
+		print++;
 	}
-	return (0);
+	return (print);
 }
 
 int	select_parsing(va_list valist, const char *str, s_element *elem)
@@ -33,7 +37,7 @@ int	select_parsing(va_list valist, const char *str, s_element *elem)
 	int i;
 
 	i = 0;
-	// debug_struct(elem);
+	debug_struct(elem);
 	if (*str == 'c')
 	{
 		i = ft_parse_char(str, elem, valist);
@@ -44,12 +48,14 @@ int	select_parsing(va_list valist, const char *str, s_element *elem)
 
 int ft_printf(const char *str, ...)
 {
-	va_list args;
-	s_element elem;
+	va_list		args;
+	s_element	elem;
+	int			print;
 
 	init_struct(&elem);
 	va_start(args, str);
-	parse_str(args, str, &elem);
+	print = parse_str(args, str, &elem);
+	printf("print is || %d ||", print);
 	va_end(args);
-	return (1);
+	return (print);
 }
