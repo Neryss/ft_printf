@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 10:35:18 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:52:00 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	debug_struct(s_element *elem)
 	ft_putstr("|\n|Sign : ");
 	ft_putnbr(elem->sign);
 	ft_putstr("|\n|Type : ");
-	ft_putnbr(elem->type);
+	ft_putchar(elem->type);
 	ft_putstr("|\n|Star : ");
 	ft_putnbr(elem->star);
 	ft_putstr("|\n| ------ |");
@@ -72,6 +72,32 @@ int	get_elem_len(const char *str, int i)
 		i++;
 	}
 	return (0);
+}
+
+int	check_flags(const char *str, s_element *elem, va_list valist)
+{
+	int i;
+
+	i = 0;
+	check_minus(str, elem);
+	check_zero(str, elem);
+	check_star(str, elem);
+	if (elem->star)
+		elem->width = va_arg(valist, int);
+	else
+		elem->width = special_atoi(str);
+	i = get_memberlen(str, elem, i);
+	if (i == 0)
+		return (1);
+	return (i);
+}
+
+int	get_memberlen(const char *str, s_element *elem, int i)
+{
+	while (!ft_ischarset(str[i], ARGUMENTS) && str[i])
+		i++;
+	elem->type = str[i];
+	return (i);
 }
 
 int	print_width(s_element *elem)

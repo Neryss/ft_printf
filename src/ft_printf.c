@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 13:32:03 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 14:52:50 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ int parse_str(va_list valist, const char *str, s_element *elem)
 		if (*str == '%')
 		{
 			init_struct(elem);
-			str += check_flags(str, elem, valist);
+			str += check_flags(str, elem, valist) + 1;
 			print += select_parsing(valist, str, elem);
-			str += print;
 		}
-		ft_putchar(*str++);
-		print++;
+		else
+		{
+			ft_putchar(*str++);
+			print++;
+		}
 	}
 	return (print);
 }
@@ -37,10 +39,11 @@ int	select_parsing(va_list valist, const char *str, s_element *elem)
 	int i;
 
 	i = 0;
-	debug_struct(elem);
-	if (*str == 'c')
+	// debug_struct(elem);
+	if (elem->type == 'c')
 	{
 		i = ft_parse_char(str, elem, valist);
+		// printf ("i in select = %d", i);
 		return (i);
 	}
 	return (0);
@@ -55,7 +58,6 @@ int ft_printf(const char *str, ...)
 	init_struct(&elem);
 	va_start(args, str);
 	print = parse_str(args, str, &elem);
-	printf("print is || %d ||", print);
 	va_end(args);
 	return (print);
 }
