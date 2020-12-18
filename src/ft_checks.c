@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 18:40:25 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/18 19:05:31 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_zero(const char *str, s_element *elem)
 	int i;
 
 	i = 0;
-	while (!ft_isdigit(str[i]))
+	while (!ft_isdigit(str[i]) && !ft_ischarset(str[i], ARGUMENTS))
 		i++;
 	if (str[i] == '0')
 	{
