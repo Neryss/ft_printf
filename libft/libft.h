@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:49:05 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/16 14:57:43 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 16:08:47 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int					ft_putchar(char c);
 int					ft_putstr_fd(char *s, int fd);
 int					ft_putchar_fd(char c, int fd);
 int					ft_putstr(char *s);
+int					ft_putstrl(char *str, int len);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_is_in_base(char c, char *base);
 int					ft_check_base(char *base);

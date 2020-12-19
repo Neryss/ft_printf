@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_str.c                                     :+:      :+:    :+:   */
+/*   ft_putstrl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 16:42:30 by ckurt            ###   ########lyon.fr   */
+/*   Created: 2020/12/19 16:06:25 by ckurt             #+#    #+#             */
+/*   Updated: 2020/12/19 16:12:37 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "libft.h"
 
-int	ft_print_str(s_element *elem, char *str)
+int	ft_putstrl(char *str, int len)
 {
 	int i;
-	int len;
 
 	i = 0;
-	len = ft_strlen(str);
-	if (elem->left_justify == 1)
-	{
-		i += ft_putstr(str);
-		i += print_width(elem, len);
-	}
-	else
-	{
-		if (elem->dot)
-		{
-			i += print_width(elem, len - elem->dot_size - 1);
-			i += ft_putstrl(str, elem->dot_size);
-		}
-		else
-		{
-			i += print_width(elem, len);
-			i += ft_putstr(str);
-		}
-	}
+	while (str[i] && i < len)
+		write(1, &str[i++], 1);
 	return (i);
 }

@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/16 15:32:21 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/19 16:08:59 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ SRCS = ft_memset.c \
 		ft_putchar.c \
 		ft_putstr_fd.c \
 		ft_putstr.c \
+		ft_putstrl.c \
 		ft_putendl_fd.c \
 		ft_putendl.c \
 		ft_putnbr_fd.c \

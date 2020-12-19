@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 15:50:19 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 16:27:58 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct t_element
 	int		width;
 	int		field;
 	int		dot;
+	int		dot_size;
 	char	type;
 	int		star;
 }				s_element;
@@ -35,6 +36,7 @@ int		check_flags(const char *str, s_element *elem, va_list valist);
 int		check_minus(const char *str, s_element *elem);
 int		check_zero(const char *str, s_element *elem);
 int		check_star(const char *str, s_element *elem);
+int		check_dot(const char *str, s_element *elem);
 int		get_memberlen(const char *str, s_element *elem, int i);
 int		special_atoi(const char *str);
 void	init_struct(s_element *elem);

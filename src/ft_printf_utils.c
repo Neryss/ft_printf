@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 15:21:40 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 16:41:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init_struct(s_element *elem)
 	elem->field = 0;
 	elem->left_justify = 0;
 	elem->dot = 0;
+	elem->dot_size = 0;
 	elem->sign = 0;
 	elem->type = 0;
 	elem->star = 0;
@@ -38,6 +39,8 @@ void	debug_struct(s_element *elem)
 	ft_putnbr(elem->left_justify);
 	ft_putstr("|\n|Dot : ");
 	ft_putnbr(elem->dot);
+	ft_putstr("|\n|Dot size: ");
+	ft_putnbr(elem->dot_size);
 	ft_putstr("|\n|Sign : ");
 	ft_putnbr(elem->sign);
 	ft_putstr("|\n|Type : ");
@@ -48,6 +51,31 @@ void	debug_struct(s_element *elem)
 	ft_putstr("\n| END |\n\n");
 }
 
+int	check_dot(const char *str, s_element *elem)
+{
+	int i;
+	int res;
+
+	i = 0;
+	res = 0;
+	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
+	{
+		if (str[i] == '.')
+		{
+			i++;
+			elem->dot = 1;
+			while (ft_isdigit(str[i]))
+			{
+				res = res * 10 + (str[i] - 48);
+				i++;
+			}
+			return (res);
+		}
+		i++;
+	}
+	return (res);
+}
+
 int	check_flags(const char *str, s_element *elem, va_list valist)
 {
 	int i;
@@ -56,6 +84,7 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	check_minus(str, elem);
 	check_zero(str, elem);
 	check_star(str, elem);
+	elem->dot_size = check_dot(str, elem);
 	if (elem->star)
 		elem->width = va_arg(valist, int);
 	else
