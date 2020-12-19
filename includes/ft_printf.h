@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 20:18:10 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:18:49 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct t_element
 }				s_element;
 
 int		ft_printf(const char *, ...);
-int		print_width(s_element *elem);
+int		print_width(s_element *elem, int len);
 int		check_flags(const char *str, s_element *elem, va_list valist);
 int		check_minus(const char *str, s_element *elem);
 int		check_zero(const char *str, s_element *elem);
@@ -40,6 +40,7 @@ int		special_atoi(const char *str);
 void	init_struct(s_element *elem);
 void	debug_struct(s_element *elem);
 int		ft_parse_char(s_element *elem, va_list valist);
+int		ft_parse_str(s_element *elem, char *str);
 int		select_parsing(va_list valist, s_element *elem);
 
 #endif

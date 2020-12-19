@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 20:16:42 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:21:40 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int	get_memberlen(const char *str, s_element *elem, int i)
 	return (i);
 }
 
-int	print_width(s_element *elem)
+int	print_width(s_element *elem, int len)
 {
 	int		i;
 	char	c;
@@ -88,7 +88,7 @@ int	print_width(s_element *elem)
 	if (elem->zero && !elem->left_justify)
 		c = '0';
 	i = 0;
-	while (i < elem->width - 1)
+	while (i < elem->width - len)
 	{
 		ft_putchar(c);
 		i++;

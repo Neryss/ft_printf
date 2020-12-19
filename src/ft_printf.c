@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 20:18:30 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:20:23 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int parse_str(va_list valist, const char *str, s_element *elem)
+int general_parsing(va_list valist, const char *str, s_element *elem)
 {
 	int	print;
 
@@ -42,6 +42,8 @@ int	select_parsing(va_list valist, s_element *elem)
 	// debug_struct(elem);
 	if (elem->type == 'c')
 		return (ft_parse_char(elem, valist));
+	if (elem->type == 's')
+		return (ft_parse_str(elem, va_arg(valist, char *)));
 	return (0);
 }
 
@@ -53,7 +55,7 @@ int ft_printf(const char *str, ...)
 
 	init_struct(&elem);
 	va_start(args, str);
-	print = parse_str(args, str, &elem);
+	print = general_parsing(args, str, &elem);
 	va_end(args);
 	return (print);
 }

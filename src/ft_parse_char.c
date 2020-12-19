@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 20:01:02 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:19:52 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ int	ft_parse_char(s_element *elem, va_list valist)
 	if (elem->left_justify == 1)
 	{
 		i += ft_putchar(va_arg(valist, int));
-		i += print_width(elem);
+		i += print_width(elem, 1);
 	}
 	else
 	{
-		i += print_width(elem);
+		i += print_width(elem, 1);
 		i += ft_putchar(va_arg(valist, int));
 	}
 	return (i);
