@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/12 17:39:37 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/19 15:12:13 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/19 15:49:40 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,8 @@ LIBC = ar rcs
 NAME = libftprintf.a
 SRCS = src/ft_printf.c \
 		src/ft_printf_utils.c \
-		src/ft_parse_char.c \
-		src/ft_parse_str.c \
+		src/ft_print_char.c \
+		src/ft_print_str.c \
 		src/ft_checks.c
 OBJS = $(SRCS:.c=.o)
 

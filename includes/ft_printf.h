@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 15:18:49 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:50:19 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int		get_memberlen(const char *str, s_element *elem, int i);
 int		special_atoi(const char *str);
 void	init_struct(s_element *elem);
 void	debug_struct(s_element *elem);
-int		ft_parse_char(s_element *elem, va_list valist);
-int		ft_parse_str(s_element *elem, char *str);
+int		ft_print_char(s_element *elem, va_list valist);
+int		ft_print_str(s_element *elem, char *str);
 int		select_parsing(va_list valist, s_element *elem);
 
 #endif

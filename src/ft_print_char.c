@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_char.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 15:19:52 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/19 15:50:10 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	special_atoi(const char *str)
 	return (res);
 }
 
-int	ft_parse_char(s_element *elem, va_list valist)
+int	ft_print_char(s_element *elem, va_list valist)
 {
 	int	i;
 
