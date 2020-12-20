@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/18 19:05:31 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/20 21:13:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int	check_zero(const char *str, s_element *elem)
 		i++;
 	if (str[i] == '0')
 	{
+		if (str[i - 1] == '.')
+			return (0);
 		elem->zero = 1;
 		return (1);
 	}
