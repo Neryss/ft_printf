@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 16:54:28 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/20 21:10:21 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_print_str(s_element *elem, char *str)
 	{
 		if (elem->dot)
 		{
-			i += print_width(elem, len - elem->dot_size - 1);
+			i += print_width(elem, elem->dot_size);
 			i += ft_putstrl(str, elem->dot_size);
 		}
 		else

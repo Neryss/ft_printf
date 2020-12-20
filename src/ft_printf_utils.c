@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 17:09:32 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/20 21:05:27 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ int	print_width(s_element *elem, int len)
 	{
 		ft_putchar(c);
 		i++;
+		// printf("%d\n", len);
 	}
 	return (i);
 }
