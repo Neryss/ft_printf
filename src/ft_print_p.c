@@ -6,51 +6,32 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 16:04:20 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 16:32:53 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-// static	int	get_len(int nb)
-// {
-// 	int	count;
+int	print_p_width(s_element *elem, int len, char *str)
+{
+	int i;
 
-// 	count = 0;
-// 	while (nb)
-// 	{
-// 		nb /= 16;
-// 		count++;
-// 	}
-// 	return (count);
-// }
-
-// char	ft_itoa_hexa(int nb);
-// {
-// 	char	*res;
-// 	int		len;
-
-// 	len = get_len(nb);
-// 	if (nb < 0)
-// 		len++;
-// 	if (!(res = ft_calloc(count + 1, sizeof(char))))
-// 		return (NULL);
-// 	if (nb < 0)
-// 		res[0] = '-';
-// 	while (len > 0)
-// 	{
-// 		res[]
-// 	}
-// }
+	i = 0;
+	i += print_width(elem, len + 2);
+	i += ft_putstr("0x");
+	i += ft_putstr(str);
+	return (i);
+}
 
 int	ft_print_p(s_element *elem, size_t nb)
 {
-	int	i;
-	(void)elem;
+	int		i;
+	int		len;
+	char	*str;
 
 	i = 0;
-
-	i += ft_putstr("0x");
-	i += ft_putstr(ft_itoa_base(nb, "0123456789abcdef"));
+	str = ft_itoa_base(nb, "0123456789abcdef");
+	len = ft_strlen(str);
+	i += print_p_width(elem, len, str);	
 	return (i);
 }
