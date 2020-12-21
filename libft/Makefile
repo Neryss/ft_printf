@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/19 16:08:59 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/21 14:50:50 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,7 @@ SRCS = ft_memset.c \
 		ft_substr.c \
 		ft_strtrim.c\
 		ft_itoa.c \
+		ft_itoa_base.c \
 		ft_strmapi.c \
 		ft_check_whitespaces.c \
 		ft_strcat.c \

@@ -1,0 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/21 13:14:59 by ckurt             #+#    #+#             */
+/*   Updated: 2020/12/21 15:48:20 by ckurt            ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int			ft_check_base(char *base)
+{
+	int		i;
+	int		j;
+
+	i = -1;
+	j = 1;
+	if (ft_strlen(base) == 0 || ft_strlen(base) == 1)
+		return (0);
+	while (base[++i])
+	{
+		if (base[i] == '+' || base[i] == '-' || base[i] == '\r'
+				|| base[i] == '\v' || base[i] == '\t' || base[i] == '\f'
+				|| base[i] == ' ')
+			return (0);
+		while (base[i + j] != '\0')
+			if (base[i] == base[i + j++])
+				return (0);
+		j = 1;
+	}
+	return (1);
+}
+
+static int	ft_itoa_getsize_base(int n, int base_len)
+{
+	int			count;
+
+	count = 0;
+	if (n < 0)
+		n *= -1;
+	while (n)
+	{
+		n /= base_len;
+		count++;
+	}
+	return (count);
+}
+
+char	*ft_itoa_base(unsigned long long n, char *base)
+{
+	int				count;
+	int				base_len;
+	char			*res;
+
+	base_len = ft_strlen(base);
+	count = ft_itoa_getsize_base(n, base_len);
+	if (n < 0 || count == 0)
+		count++;
+	if (!(res = ft_calloc(count + 1, sizeof(char))))
+		return (NULL);
+	while (count > 0)
+	{
+		res[--count] = base[n % base_len];
+		n /= base_len;
+	}
+	printf("hex value is %s\n", res);
+	return (res);
+}

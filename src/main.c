@@ -10,9 +10,10 @@ int main(int argc, char *argv[])
 	// r = ft_printf(" %.*s ", -2, NULL);
 	// ft_printf("\n");
 	// d = printf(" %.*s ", -2, NULL);
-	r = ft_printf(" %.*s ", -2, NULL);
+	r = ft_printf(" %p ", -1);
 	ft_printf("\n");
-	d = printf(" %.*s ", -2, NULL);
+	d = printf(" %p ", -1);
+	// printf("%s\n", ft_itoa_base(12387, "0123456789abcdef"));
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);
