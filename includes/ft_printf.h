@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/19 16:27:58 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 11:40:00 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int		check_minus(const char *str, s_element *elem);
 int		check_zero(const char *str, s_element *elem);
 int		check_star(const char *str, s_element *elem);
 int		check_dot(const char *str, s_element *elem);
+int		is_dot_first(const char *str);
 int		get_memberlen(const char *str, s_element *elem, int i);
 int		special_atoi(const char *str);
 void	init_struct(s_element *elem);

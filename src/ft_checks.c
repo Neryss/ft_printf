@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/20 21:13:48 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 11:39:29 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ int	check_star(const char *str, s_element *elem)
 			elem->star = 1;
 			return (i);
 		}
+		i++;
+	}
+	return (-1);
+}
+
+int is_dot_first(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] && !ft_ischarset(str[i], ARGUMENTS))
+	{
+		if (str[i] == '.')
+			return (1);
+		if (str[i] == '*')
+			return (0);
 		i++;
 	}
 	return (-1);

@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 10:40:48 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 11:42:58 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	elem->dot_size = check_dot(str, elem);
 	if (elem->star)
 	{
-		if (elem->dot)
+		if (is_dot_first(str))
 			elem->dot_size = va_arg(valist, int);
 		else
 			elem->width = va_arg(valist, int);

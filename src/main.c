@@ -10,9 +10,9 @@ int main(int argc, char *argv[])
 	// r = ft_printf(" %.*s ", -2, NULL);
 	// ft_printf("\n");
 	// d = printf(" %.*s ", -2, NULL);
-	r = ft_printf(" %*.s %.1s ", 10, "123", "4567");
+	r = ft_printf(" %.*s ", -2, NULL);
 	ft_printf("\n");
-	d = printf(" %*.s %.1s ", 10, "123", "4567");
+	d = printf(" %.*s ", -2, NULL);
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);
