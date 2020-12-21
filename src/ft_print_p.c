@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 15:43:34 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 16:04:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@
 // 	}
 // }
 
-int	ft_print_p(s_element *elem, int nb)
+int	ft_print_p(s_element *elem, size_t nb)
 {
 	int	i;
 	(void)elem;
 
 	i = 0;
-	
-	printf("itoa_base is = %s", ft_itoa_base(nb, "0123456789abcdef"));
+
+	i += ft_putstr("0x");
 	i += ft_putstr(ft_itoa_base(nb, "0123456789abcdef"));
 	return (i);
 }

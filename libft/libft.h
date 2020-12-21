@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:49:05 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 15:41:33 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 15:57:43 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_putnbr_base(int nb, char *base);
 char				*ft_itoa(int n);
-char				*ft_itoa_base(unsigned long long n, char *base);
+char				*ft_itoa_base(size_t n, char *base);
 
 void				*ft_calloc(size_t count, size_t size);
 void				*ft_freeall(char **tab, int size);
