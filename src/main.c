@@ -7,8 +7,12 @@ int main(int argc, char *argv[])
 	// r = ft_printf("%*c0\n",50,'m');
 	// d = printf("%*c0\n",50,'m');
 	// r = ft_printf(" %-3.s ", NULL);
+	// r = ft_printf(" %.*s ", -2, NULL);
+	// ft_printf("\n");
+	// d = printf(" %.*s ", -2, NULL);
+	r = ft_printf(" %*.s %.1s ", 10, "123", "4567");
 	ft_printf("\n");
-	d = printf(" %-3.s ", NULL);
+	d = printf(" %*.s %.1s ", 10, "123", "4567");
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);
