@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 18:54:53 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 19:08:03 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ static	int	zero_justify_x(t_element *elem, char *str, int len)
 	}
 	else
 	{
-		i += print_width(elem, elem->dot_size);
 		i += ft_putstr(str);
+		i += print_width(elem, elem->dot_size);
 	}
 	return (i);
 }
@@ -77,8 +77,8 @@ static	int	print_x_justify(t_element *elem, char *str, int len)
 		i += zero_justify_x(elem, str, len);
 	else
 	{
-		i += print_width(elem, len);
 		i += ft_putstr(str);
+		i += print_width(elem, len);
 	}
 	return (i);
 }
@@ -88,14 +88,10 @@ int	ft_print_x(t_element *elem, unsigned int nb, char *base)
 	char	*str;
 	int		i;
 	int		len;
-	// long long int temp;
 
 	i = 0;
-	// temp = (long long int)nb;
-	// printf("[%llu]", temp);
 	str = ft_itoa_base(nb, base);
 	len = ft_strlen(str);
-	// printf("(%s)", str);
 	if (elem->left_justify)
 		i += print_x_justify(elem, str, len);
 	else
