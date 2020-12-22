@@ -4,16 +4,12 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	// r = ft_printf("%*c0\n",50,'m');
-	// d = printf("%*c0\n",50,'m');
-	// r = ft_printf(" %-3.s ", NULL);
-	// r = ft_printf(" %.*s ", -2, NULL);
+	// r = ft_printf(" %5.1s ", "salut");
 	// ft_printf("\n");
-	// d = printf(" %.*s ", -2, NULL);
-	r = ft_printf(" %5.11p ", 112343);
+	// d = printf(" %5.1s ", "salut");
+	r = ft_printf(" %010.5p ", 112343);
 	ft_printf("\n");
-	d = printf(" %5.11p ", 112343);
-	// printf("%s\n", ft_itoa_base(-111111, "0123456789abcdef"));
+	d = printf(" %010.5p ", 112343);
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);

@@ -6,20 +6,29 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 22:36:49 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 09:19:10 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int print_p_width(s_element *elem, int len, char *str)
+// int print_p_width(s_element *elem, int len, char *str)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	i += print_width(elem, len + 2);
+// 	i += ft_putstr("0x");
+// 	i += ft_putstr(str);
+// 	return (i);
+// }
+static	int	print_p_zero(int len)
 {
 	int i;
 
 	i = 0;
-	i += print_width(elem, len + 2);
-	i += ft_putstr("0x");
-	i += ft_putstr(str);
+	while (i < len)
+		i += ft_putchar('0');
 	return (i);
 }
 
@@ -31,19 +40,28 @@ static int print_p_justify(s_element *elem, char *str, int len)
 	if (elem->dot)
 	{
 		if (elem->dot_size > len)
-			elem->dot_size = len;
-		i += ft_putstr("0x");
-		i += ft_putstrl(str, -elem->dot_size - len - 2);
-		i += print_width(elem, elem->dot_size);
+		{
+			elem->zero = 1;
+			i += ft_putstr("0x");
+			i += ft_putstrl(str, elem->dot_size);
+			i += print_p_zero(elem->dot_size - len);
+		}
+		else
+		{
+			i += ft_putstr("0x");
+			i += ft_putstrl(str, elem->dot_size);
+			i += print_width(elem, elem->dot_size);
+		}
 	}
 	else
 	{
 		i += ft_putstr("0x");
-		i += ft_putstr(str);
+		i += ft_putstrl(str, len);
 		i += print_width(elem, len + 2);
 	}
 	return (i);
 }
+
 
 static	int	print_p_else(s_element *elem, char *str, int len)
 {
@@ -54,25 +72,23 @@ static	int	print_p_else(s_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
-		// printf("yo");
 			elem->zero = 1;
 			i += ft_putstr("0x");
-			i += print_width(elem, elem->dot_size);
+			i += print_p_zero(elem->dot_size - len);
 			i += ft_putstrl(str, elem->dot_size);
-			debug_struct(elem);
 		}
 		else
 		{
 			i += print_width(elem, elem->dot_size);
 			i += ft_putstr("0x");
-			i += ft_putstrl(str, elem->dot_size);
+			i += ft_putstr(str);
 		}
 	}
 	else
 	{
-		i += print_width(elem, len + 2);
 		i += ft_putstr("0x");
-		i += ft_putstrl(str, elem->dot_size);
+		i += print_width(elem, len + 2);
+		i += ft_putstrl(str, len);
 	}
 	return (i);
 }
