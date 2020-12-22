@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/14 10:48:23 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/14 10:48:36 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:18:34 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_ischarset(char c, const char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])

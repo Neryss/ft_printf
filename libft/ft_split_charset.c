@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/28 15:01:04 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/14 11:03:42 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:20:28 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	is_char_in_str(char c, char *str)
 	return (0);
 }
 
-static int			count_words(char *str, char *charset)
+static int	count_words(char *str, char *charset)
 {
 	int		i;
 	int		word;
@@ -49,7 +49,7 @@ static int			count_words(char *str, char *charset)
 	return (word);
 }
 
-static int			get_word_length(char *str, char *charset, int index)
+static int	get_word_length(char *str, char *charset, int index)
 {
 	int		l;
 

@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 17:26:35 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/15 17:36:14 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:18:47 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_base(char *base)
+int			check_base(char *base)
 {
 	int		i;
 	int		j;
@@ -35,7 +35,7 @@ int	check_base(char *base)
 	return (1);
 }
 
-int	int_from_base(char c, char *base)
+int			int_from_base(char c, char *base)
 {
 	int		i;
 

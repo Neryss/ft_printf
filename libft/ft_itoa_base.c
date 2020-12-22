@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 13:14:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 16:08:26 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:19:23 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int			ft_check_base(char *base)
 	return (1);
 }
 
-static int	ft_itoa_getsize_base(size_t n, int base_len)
+static	int	ft_itoa_getsize_base(size_t n, int base_len)
 {
-	int			count;
+	int		count;
 
 	count = 0;
 	while (n)
@@ -48,11 +48,11 @@ static int	ft_itoa_getsize_base(size_t n, int base_len)
 	return (count);
 }
 
-char	*ft_itoa_base(size_t n, char *base)
+char		*ft_itoa_base(size_t n, char *base)
 {
-	int				count;
-	int				base_len;
-	char			*res;
+	int		count;
+	int		base_len;
+	char	*res;
 
 	base_len = ft_strlen(base);
 	count = ft_itoa_getsize_base(n, base_len);
