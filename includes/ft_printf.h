@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 10:59:35 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 12:20:09 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void			debug_struct(t_element *elem);
 int				ft_print_char(t_element *elem, va_list valist);
 int				ft_print_str(t_element *elem, char *str);
 int				ft_print_p(t_element *elem, size_t nb);
-int				ft_print_x(t_element *elem, int nb, char *base);
+int				ft_print_x(t_element *elem, size_t nb, char *base);
 int				print_zero(int len);
 int				select_parsing(va_list valist, t_element *elem);
 
