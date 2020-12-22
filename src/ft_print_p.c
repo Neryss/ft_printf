@@ -6,53 +6,63 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 09:42:05 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:07:35 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-// int print_p_width(s_element *elem, int len, char *str)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	i += print_width(elem, len + 2);
-// 	i += ft_putstr("0x");
-// 	i += ft_putstr(str);
-// 	return (i);
-// }
-static	int	print_p_zero(int len)
+static	int	zero_justify_p(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	while (i < len)
-		i += ft_putchar('0');
+	if (elem->dot_size > len)
+	{
+		elem->zero = 1;
+		i += ft_putstr("0x");
+		i += print_p_zero(elem->dot_size - len);
+		i += ft_putstrl(str, elem->dot_size);
+	}
+	else
+	{
+		i += ft_putstr("0x");
+		i += ft_putstrl(str, elem->dot_size);
+		i += print_width(elem, elem->dot_size);
+	}
 	return (i);
 }
 
-static int print_p_justify(s_element *elem, char *str, int len)
+static	int	zero_else_p(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
+
+	i = 0;
+	if (elem->dot_size > len)
+	{
+		elem->zero = 0;
+		i += print_width(elem, elem->dot_size + 2);
+		elem->zero = 1;
+		i += ft_putstr("0x");
+		i += print_p_zero(elem->dot_size - len);
+		i += ft_putstrl(str, elem->dot_size);
+	}
+	else
+	{
+		i += print_width(elem, elem->dot_size);
+		i += ft_putstr("0x");
+		i += ft_putstr(str);
+	}
+	return (i);
+}
+
+static	int	print_p_justify(t_element *elem, char *str, int len)
+{
+	int		i;
 
 	i = 0;
 	if (elem->dot)
-	{
-		if (elem->dot_size > len)
-		{
-			elem->zero = 1;
-			i += ft_putstr("0x");
-			i += print_p_zero(elem->dot_size - len);
-			i += ft_putstrl(str, elem->dot_size);
-		}
-		else
-		{
-			i += ft_putstr("0x");
-			i += ft_putstrl(str, elem->dot_size);
-			i += print_width(elem, elem->dot_size);
-		}
-	}
+		i += zero_justify_p(elem, str, len);
 	else
 	{
 		i += ft_putstr("0x");
@@ -62,30 +72,13 @@ static int print_p_justify(s_element *elem, char *str, int len)
 	return (i);
 }
 
-
-static	int	print_p_else(s_element *elem, char *str, int len)
+static	int	print_p_else(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot)
-	{
-		if (elem->dot_size > len)
-		{
-			elem->zero = 0;
-			i += print_width(elem, elem->dot_size + 2);
-			elem->zero = 1;
-			i += ft_putstr("0x");
-			i += print_p_zero(elem->dot_size - len);
-			i += ft_putstrl(str, elem->dot_size);
-		}
-		else
-		{
-			i += print_width(elem, elem->dot_size);
-			i += ft_putstr("0x");
-			i += ft_putstr(str);
-		}
-	}
+		i += zero_else_p(elem, str, len);
 	else
 	{
 		i += print_width(elem, len + 2);
@@ -95,11 +88,11 @@ static	int	print_p_else(s_element *elem, char *str, int len)
 	return (i);
 }
 
-int ft_print_p(s_element *elem, size_t nb)
+int			ft_print_p(t_element *elem, size_t nb)
 {
-	int i;
-	int len;
-	char *str;
+	int		i;
+	int		len;
+	char	*str;
 
 	i = 0;
 	str = ft_itoa_base(nb, "0123456789abcdef");

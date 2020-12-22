@@ -6,15 +6,15 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 16:31:50 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:07:18 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int print_justify(s_element *elem, char *str, int len)
+static	int	print_justify(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot)
@@ -32,9 +32,9 @@ static int print_justify(s_element *elem, char *str, int len)
 	return (i);
 }
 
-static int print_else(s_element *elem, char *str, int len)
+static	int	print_else(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot)
@@ -52,10 +52,10 @@ static int print_else(s_element *elem, char *str, int len)
 	return (i);
 }
 
-int ft_print_str(s_element *elem, char *str)
+int			ft_print_str(t_element *elem, char *str)
 {
-	int i;
-	int len;
+	int		i;
+	int		len;
 
 	i = 0;
 	if (str)

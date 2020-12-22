@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 12:35:10 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:07:51 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	init_struct(s_element *elem)
+void		init_struct(t_element *elem)
 {
 	elem->zero = 0;
 	elem->width = 0;
@@ -25,7 +25,7 @@ void	init_struct(s_element *elem)
 	elem->star = 0;
 }
 
-void	debug_struct(s_element *elem)
+void		debug_struct(t_element *elem)
 {
 	ft_putstr("| ELEMENT |\n");
 	ft_putstr("| ------- |\n");
@@ -51,10 +51,10 @@ void	debug_struct(s_element *elem)
 	ft_putstr("\n| END |\n\n");
 }
 
-int	check_dot(const char *str, s_element *elem)
+int			check_dot(const char *str, t_element *elem)
 {
-	int i;
-	int res;
+	int		i;
+	int		res;
 
 	i = 0;
 	res = 0;
@@ -76,9 +76,9 @@ int	check_dot(const char *str, s_element *elem)
 	return (res);
 }
 
-int	check_flags(const char *str, s_element *elem, va_list valist)
+int			check_flags(const char *str, t_element *elem, va_list valist)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	check_minus(str, elem);
@@ -108,7 +108,7 @@ int	check_flags(const char *str, s_element *elem, va_list valist)
 	return (i);
 }
 
-int	get_memberlen(const char *str, s_element *elem, int i)
+int			get_memberlen(const char *str, t_element *elem, int i)
 {
 	while (!ft_ischarset(str[i], ARGUMENTS) && str[i])
 		i++;
@@ -116,7 +116,7 @@ int	get_memberlen(const char *str, s_element *elem, int i)
 	return (i);
 }
 
-int	print_width(s_element *elem, int len)
+int			print_width(t_element *elem, int len)
 {
 	int		i;
 	char	c;

@@ -4,12 +4,9 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	// r = ft_printf(" %5.1s ", "salut");
-	// ft_printf("\n");
-	// d = printf(" %5.1s ", "salut");
-	r = ft_printf(" %10p %10p ", 1, -1);
+	r = ft_printf(" %-.12p ", 123);
 	ft_printf("\n");
-	d = printf(" %10p %10p ", 1, -1);
+	d = printf(" %-.12p ", 123);
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);

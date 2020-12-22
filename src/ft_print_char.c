@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/21 14:33:04 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:10:08 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	special_atoi(const char *str)
 	return (res);
 }
 
-int	ft_print_char(s_element *elem, va_list valist)
+int	ft_print_char(t_element *elem, va_list valist)
 {
 	int	i;
 
