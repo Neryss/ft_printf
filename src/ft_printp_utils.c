@@ -6,13 +6,13 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 09:54:07 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 09:55:42 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 10:58:41 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		print_p_zero(int len)
+int		print_zero(int len)
 {
 	int	i;
 
