@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 15:56:20 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 16:51:02 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ static	int	print_x_justify(t_element *elem, char *str, int len)
 	return (i);
 }
 
-int	ft_print_x(t_element *elem, size_t nb, char *base)
+int	ft_print_x(t_element *elem, unsigned long long nb, char *base)
 {
 	char	*str;
 	int		i;
@@ -91,8 +91,8 @@ int	ft_print_x(t_element *elem, size_t nb, char *base)
 
 	i = 0;
 	str = ft_itoa_base(nb, base);
+	printf("nb [%llu]", nb);
 	len = ft_strlen(str);
-	// debug_struct(elem);
 	printf("(%s)", str);
 	if (elem->left_justify)
 		i += print_x_justify(elem, str, len);
