@@ -6,7 +6,11 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/12/22 13:43:02 by ckurt            ###   ########lyon.fr   */
+=======
+/*   Updated: 2020/12/22 14:46:57 by ckurt            ###   ########lyon.fr   */
+>>>>>>> test
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +52,7 @@ void		debug_struct(t_element *elem)
 	ft_putstr("|\n|Star : ");
 	ft_putnbr(elem->star);
 	ft_putstr("|\n| ------ |");
-	ft_putstr("\n| END |\n\n");
+	ft_putstr("\n| END |\n");
 }
 
 int			check_dot(const char *str, t_element *elem)
@@ -84,6 +88,7 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 	check_minus(str, elem);
 	check_zero(str, elem);
 	check_star(str, elem, valist);
+<<<<<<< HEAD
 	if (!elem->dot_size)
 		elem->dot_size = check_dot(str, elem);
 	// if (elem->star)
@@ -95,6 +100,14 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 	// }
 	if (!elem->star)
 		elem->width = special_atoi(str);
+=======
+	if (!elem->dot)
+	{
+		elem->dot_size = check_dot(str, elem);
+		if (!elem->width)
+			elem->width = special_atoi(str);
+	}
+>>>>>>> test
 	if (elem->width < 0)
 	{
 		if (elem->width < 0)

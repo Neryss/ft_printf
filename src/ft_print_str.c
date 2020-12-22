@@ -6,7 +6,11 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/12/22 13:40:20 by ckurt            ###   ########lyon.fr   */
+=======
+/*   Updated: 2020/12/22 15:00:29 by ckurt            ###   ########lyon.fr   */
+>>>>>>> test
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +67,10 @@ int			ft_print_str(t_element *elem, char *str)
 	if (str)
 		len = ft_strlen(str);
 	if (str == NULL)
+	{
 		str = ft_strdup("(null)");
+		len = ft_strlen(str);
+	}
 	if (elem->left_justify)
 		i += print_justify(elem, str, len);
 	else
