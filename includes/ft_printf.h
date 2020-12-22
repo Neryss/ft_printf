@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 12:20:09 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 14:00:52 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				print_width(t_element *elem, int len);
 int				check_flags(const char *str, t_element *elem, va_list valist);
 int				check_minus(const char *str, t_element *elem);
 int				check_zero(const char *str, t_element *elem);
-int				check_star(const char *str, t_element *elem);
+int				check_star(const char *str, t_element *elem, va_list valist);
 int				check_dot(const char *str, t_element *elem);
 int				is_dot_first(const char *str);
 int				get_memberlen(const char *str, t_element *elem, int i);

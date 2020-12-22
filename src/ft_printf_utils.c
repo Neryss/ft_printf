@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 10:07:51 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 14:24:37 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		debug_struct(t_element *elem)
 	ft_putstr("|\n|Star : ");
 	ft_putnbr(elem->star);
 	ft_putstr("|\n| ------ |");
-	ft_putstr("\n| END |\n\n");
+	ft_putstr("\n| END |\n");
 }
 
 int			check_dot(const char *str, t_element *elem)
@@ -83,17 +83,12 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 	i = 0;
 	check_minus(str, elem);
 	check_zero(str, elem);
-	check_star(str, elem);
-	elem->dot_size = check_dot(str, elem);
-	if (elem->star)
+	check_star(str, elem, valist);
+	if (!elem->star)
 	{
-		if (is_dot_first(str))
-			elem->dot_size = va_arg(valist, int);
-		else
-			elem->width = va_arg(valist, int);
-	}
-	else
+		elem->dot_size = check_dot(str, elem);
 		elem->width = special_atoi(str);
+	}
 	if (elem->width < 0)
 	{
 		if (elem->width < 0)
