@@ -6,11 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/12/22 13:40:20 by ckurt            ###   ########lyon.fr   */
-=======
 /*   Updated: 2020/12/22 15:00:29 by ckurt            ###   ########lyon.fr   */
->>>>>>> test
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +39,6 @@ static	int	print_else(t_element *elem, char *str, int len)
 	i = 0;
 	if (elem->dot)
 	{
-		if (elem->dot_size == 0 && !elem->width)
-			elem->dot_size = 1;
 		if (elem->dot_size > len)
 			elem->dot_size = len;
 		i += print_width(elem, elem->dot_size);
