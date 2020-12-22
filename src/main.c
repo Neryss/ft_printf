@@ -7,9 +7,9 @@ int main(int argc, char *argv[])
 	// r = ft_printf(" %5.1s ", "salut");
 	// ft_printf("\n");
 	// d = printf(" %5.1s ", "salut");
-	r = ft_printf(" %010.5p ", 112343);
+	r = ft_printf(" %-15p ", 112343);
 	ft_printf("\n");
-	d = printf(" %010.5p ", 112343);
+	d = printf(" %-15p ", 112343);
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
 	return (0);

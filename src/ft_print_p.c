@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 09:19:10 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 09:31:30 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static	int	print_p_else(s_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
+			elem->zero = 0;
+			i += print_width(elem, elem->dot_size + 2);
 			elem->zero = 1;
 			i += ft_putstr("0x");
 			i += print_p_zero(elem->dot_size - len);
