@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 14:19:02 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 14:31:21 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ int	check_star(const char *str, t_element *elem, va_list valist)
 		if (str[i] == '*')
 		{
 			elem->star = 1;
-			if (str[i + 1] == '.')
-				elem->width = va_arg(valist, int);
-			if (ft_ischarset(str[i + 1], ARGUMENTS))
+			if (ft_ischarset(str[i + 1], ARGUMENTS) && str[i - 1] == '.')
 			{
 				elem->dot = 1;
 				elem->dot_size = va_arg(valist, int);
 			}
+			if ((str[i + 1] == '.' || ft_ischarset(str[i + 1], ARGUMENTS)) && !elem->dot)
+				elem->width = va_arg(valist, int);
 		}
 		i++;
 	}

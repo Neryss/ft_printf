@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 14:24:47 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 14:42:27 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static	int	print_justify(t_element *elem, char *str, int len)
 	i = 0;
 	if (elem->dot)
 	{
-		// if (elem->dot_size > len)
-		// 	elem->dot_size = len;
+		if (elem->dot_size > len)
+			elem->dot_size = len;
 		i += ft_putstrl(str, elem->dot_size);
 		i += print_width(elem, elem->dot_size);
 	}
@@ -39,8 +39,8 @@ static	int	print_else(t_element *elem, char *str, int len)
 	i = 0;
 	if (elem->dot)
 	{
-		// if (elem->dot_size > len)
-		// 	elem->dot_size = len;
+		if (elem->dot_size > len)
+			elem->dot_size = len;
 		i += print_width(elem, elem->dot_size);
 		i += ft_putstrl(str, elem->dot_size);
 	}
@@ -58,7 +58,7 @@ int			ft_print_str(t_element *elem, char *str)
 	int		len;
 
 	i = 0;
-	// debug_struct(elem);
+	debug_struct(elem);
 	if (str)
 		len = ft_strlen(str);
 	if (str == NULL)
