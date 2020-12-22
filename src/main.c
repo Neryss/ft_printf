@@ -4,10 +4,16 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	r = ft_printf(" %9.1s ", NULL);
+		r = ft_printf("[ *%*.*x* *%*.*x* ]", 10, 21, -101, 10, 21, 134);
 	ft_printf("\n");
-	d = printf(" %9.1s ", NULL);
-	printf("\n\nreturn mine is [%d]", r);
-	printf("\n\nreturn libc is [%d]", d);
+	// ft_printf("%10.21x|", 134);
+	d = printf("[ *%*.*x* *%*.*x* ]", 10, 21, -101, 10, 21, 134);
+	// printf("%10.21x|", -101);
+	// printf("%10.21x|", 134);
+	printf("\n");
+	// printf("%10.21x", 134);
+
+	// printf("\n\nreturn mine is [%d]", r);
+	// printf("\n\nreturn libc is [%d]", d);
 	return (0);
 }

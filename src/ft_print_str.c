@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/19 14:57:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 14:48:33 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 15:00:29 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int			ft_print_str(t_element *elem, char *str)
 	int		len;
 
 	i = 0;
-	// debug_struct(elem);
 	if (str)
 		len = ft_strlen(str);
 	if (str == NULL)
