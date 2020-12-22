@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 09:31:30 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 09:42:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static int print_p_justify(s_element *elem, char *str, int len)
 		{
 			elem->zero = 1;
 			i += ft_putstr("0x");
-			i += ft_putstrl(str, elem->dot_size);
 			i += print_p_zero(elem->dot_size - len);
+			i += ft_putstrl(str, elem->dot_size);
 		}
 		else
 		{
@@ -88,8 +88,8 @@ static	int	print_p_else(s_element *elem, char *str, int len)
 	}
 	else
 	{
-		i += ft_putstr("0x");
 		i += print_width(elem, len + 2);
+		i += ft_putstr("0x");
 		i += ft_putstrl(str, len);
 	}
 	return (i);
