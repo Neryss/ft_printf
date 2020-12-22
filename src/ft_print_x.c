@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 19:08:03 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/22 19:11:29 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static	int	zero_justify_x(t_element *elem, char *str, int len)
 	else
 	{
 		i += ft_putstr(str);
-		i += print_width(elem, elem->dot_size);
+		i += print_width(elem, len);
 	}
 	return (i);
 }
