@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 14:31:21 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/23 13:37:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ int	check_star(const char *str, t_element *elem, va_list valist)
 			{
 				elem->dot = 1;
 				elem->dot_size = va_arg(valist, int);
+				// if (elem->dot_size == 0)
+				// 	elem->dot_size = 1;
 			}
 			if ((str[i + 1] == '.' || ft_ischarset(str[i + 1], ARGUMENTS)) && !elem->dot)
 				elem->width = va_arg(valist, int);
