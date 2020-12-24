@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/23 14:32:26 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/24 12:06:10 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	int	zero_else_x(t_element *elem, char *str, int len)
 {
 	int		i;
-
+	//ISSUE HERE FOR X 57
 	i = 0;
 	if (elem->dot_size > len)
 	{
@@ -27,8 +27,17 @@ static	int	zero_else_x(t_element *elem, char *str, int len)
 	}
 	else
 	{
-		i += print_width(elem, len);
-		i += ft_putstrl(str, elem->dot_size);
+		if (len == 1 && str[1] == 0)
+		{
+			i += print_width(elem, elem->dot_size);
+			i += ft_putstrl(str, elem->dot_size);
+		}
+		else
+		{
+			// elem->zero = 1;
+			i += print_width(elem, len);
+			i += ft_putstr(str);
+		}
 	}
 	return (i);
 }
