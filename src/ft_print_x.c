@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/24 21:23:16 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/24 21:29:55 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static	int	zero_else_x(t_element *elem, char *str, int len)
 {
 	int		i;
-	//ISSUE HERE FOR X 57
+
 	i = 0;
 	if (elem->dot_size > len)
 	{
@@ -27,6 +27,7 @@ static	int	zero_else_x(t_element *elem, char *str, int len)
 	}
 	else
 	{
+		elem->zero = 0;
 		if (len == 1 && str[1] == 0)
 		{
 			i += print_width(elem, elem->dot_size);
@@ -34,7 +35,6 @@ static	int	zero_else_x(t_element *elem, char *str, int len)
 		}
 		else
 		{
-			elem->zero = 0;
 			i += print_width(elem, len);
 			i += ft_putstr(str);
 		}
@@ -66,7 +66,6 @@ static	int	zero_justify_x(t_element *elem, char *str, int len)
 			i += ft_putstr(str);
 			i += print_width(elem, len);
 		}
-		// printf("dot size %d", elem->dot_size);
 	}
 	return (i);
 }

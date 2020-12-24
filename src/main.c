@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	r = ft_printf("%09.0x", UINT_MAX);
+	r = ft_printf("%09.0x", UINT_MAX + 1);
 	ft_printf("\n");
-	d = printf("%09.0x", UINT_MAX);
+	d = printf("%09.0x", UINT_MAX + 1);
 
 	printf("\n\nreturn mine is [%d]", r);
 	printf("\n\nreturn libc is [%d]", d);
