@@ -9,7 +9,5 @@ int main(int argc, char *argv[])
 	ft_printf("\n");
 	d = printf(" %10.42d ", -1);
 
-	printf("\n\nreturn mine is [%d]", r);
-	printf("\n\nreturn libc is [%d]", d);
 	return (0);
 }
