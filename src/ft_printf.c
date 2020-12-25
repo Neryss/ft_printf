@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/24 21:21:02 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/25 12:08:19 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ int	select_parsing(va_list valist, t_element *elem)
 	if (elem->type == 'p')
 		return (ft_print_p(elem, va_arg(valist, size_t)));
 	if (elem->type == 'x')
-		return (ft_print_x(elem, va_arg(valist, unsigned int), "0123456789abcdef"));
+		return (ft_print_x(elem, va_arg(valist, unsigned int),
+		"0123456789abcdef"));
 	if (elem->type == 'X')
-		return (ft_print_x(elem, va_arg(valist, unsigned int), "0123456789ABCDEF"));
+		return (ft_print_x(elem, va_arg(valist, unsigned int),
+		"0123456789ABCDEF"));
+	if (elem->type == 'd')
+		return (ft_print_di(elem, va_arg(valist, int)));
 	return (0);
 }
 

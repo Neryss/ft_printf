@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/24 21:29:55 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/25 11:58:13 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static	int	zero_else_x(t_element *elem, char *str, int len)
 	{
 		elem->zero = 0;
 		i += print_width(elem, elem->dot_size);
-		elem->zero = 1;
 		i += print_zero(elem->dot_size - len);
 		i += ft_putstrl(str, elem->dot_size);
 	}
@@ -72,14 +71,13 @@ static	int	zero_justify_x(t_element *elem, char *str, int len)
 
 static	int	print_x_else(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot)
 		i += zero_else_x(elem, str, len);
 	else
 	{
-		// elem->zero = 0;
 		i += print_width(elem, len);
 		i += ft_putstrl(str, len);
 	}
@@ -88,7 +86,7 @@ static	int	print_x_else(t_element *elem, char *str, int len)
 
 static	int	print_x_justify(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot)
@@ -101,7 +99,7 @@ static	int	print_x_justify(t_element *elem, char *str, int len)
 	return (i);
 }
 
-int	ft_print_x(t_element *elem, unsigned int nb, char *base)
+int			ft_print_x(t_element *elem, unsigned int nb, char *base)
 {
 	char	*str;
 	int		i;
