@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/25 13:23:23 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 14:54:04 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,19 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
-			i += print_width(elem, elem->dot_size);
-			i += print_zero(elem->dot_size - len);
-			i += ft_putstrl(str, len);
+			if (str[0] == '-')
+			{
+				i += ft_putchar('-');
+				i += print_width(elem, elem->dot_size);
+				i += print_zero(elem->dot_size - len + 1);
+				i += ft_putstrl(str + 1, len);
+			}
+			else
+			{
+				i += print_width(elem, elem->dot_size);
+				i += print_zero(elem->dot_size - len);
+				i += ft_putstrl(str, len);
+			}
 		}
 		else
 		{
@@ -56,8 +66,8 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
-			i += ft_putstr(str);
 			i += print_zero(elem->dot_size - len);
+			i += ft_putstr(str);
 			i += print_width(elem, elem->dot_size);
 		}
 		else
@@ -82,6 +92,11 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	}
 	return (i);
 }
+
+// int			print_negative(char *str, int len)
+// {
+	 
+// }
 
 int			ft_print_di(t_element *elem, int nb)
 {
