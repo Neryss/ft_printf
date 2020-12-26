@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 15:41:26 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 15:47:07 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 	i = 0;
 	if (elem->dot)
 	{
-		if (elem->dot_size > len)
+		if (elem->dot_size >= len)
 		{
 
 			if (str[0] == '-')
@@ -77,7 +77,7 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	i = 0;
 	if (elem->dot)
 	{
-		if (elem->dot_size > len)
+		if (elem->dot_size >= len)
 		{
 			if (str[0] == '-')
 			{
