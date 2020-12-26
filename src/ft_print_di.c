@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 15:09:32 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 15:22:06 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 			}
 			else
 			{
+				elem->zero = 0;
 				i += print_width(elem, elem->dot_size);
 				i += print_zero(elem->dot_size - len);
 				i += ft_putstrl(str, len);
@@ -52,8 +53,17 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 	}
 	else
 	{
-		i += print_width(elem, len);
-		i += ft_putstr(str);
+		if (str[0] == '-')
+		{
+			i += ft_putchar('-');
+			i += print_width(elem, len);
+			i += ft_putstr(str + 1 );
+		}
+		else
+		{
+			i += print_width(elem, len);
+			i += ft_putstr(str);
+		}
 	}
 	return (i);
 }
@@ -98,6 +108,12 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	}
 	else
 	{
+		if (str[0] == '-')
+		{
+			i += ft_putchar('-');
+			i += ft_putstr(str + 1 );
+			i += print_width(elem, len);
+		}
 		i += ft_putstr(str);
 		i += print_width(elem, len);
 	}
