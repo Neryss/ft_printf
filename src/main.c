@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	r = ft_printf(" %-3.2d %10.42d ", 1, -1);
+	r = ft_printf(" 0*%0-*.*d*0 0*%0*.*d*0 ", 2, 6, 102, 21, 10, -101);
 	ft_printf("\n");
-	d = printf(" %-3.2d %10.42d ", 1, -1);
+	d = printf(" 0*%0-*.*d*0 0*%0*.*d*0 ", 2, 6, 102, 21, 10, -101);
 
 	return (0);
 }

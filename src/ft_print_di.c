@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 14:54:04 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 15:09:32 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 		{
 			if (str[0] == '-')
 			{
+				elem->zero = 0;
+				i += print_width(elem, elem->dot_size + 1);
 				i += ft_putchar('-');
-				i += print_width(elem, elem->dot_size);
 				i += print_zero(elem->dot_size - len + 1);
 				i += ft_putstrl(str + 1, len);
 			}
@@ -66,9 +67,19 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
-			i += print_zero(elem->dot_size - len);
-			i += ft_putstr(str);
-			i += print_width(elem, elem->dot_size);
+			if (str[0] == '-')
+			{
+				i += print_width(elem, elem->dot_size);
+				i += ft_putchar('-');
+				i += print_zero(elem->dot_size - len + 1);
+				i += ft_putstrl(str + 1, elem->dot_size + 1);
+			}
+			else
+			{
+				i += print_zero(elem->dot_size - len);
+				i += ft_putstr(str);
+				i += print_width(elem, elem->dot_size);
+			}
 		}
 		else
 		{
