@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 19:18:53 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 20:11:53 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int				ft_print_str(t_element *elem, char *str);
 int				ft_print_p(t_element *elem, size_t nb);
 int				ft_print_x(t_element *elem, unsigned int nb, char *base);
 int				ft_print_di(t_element *elem, int nb);
+int				ft_print_u(t_element *elem, unsigned int nb);
 int				dot_else_justif(t_element *elem, char *str, int len);
 int				dot_size_greater_justif(t_element *elem, char *str, int len);
 int				print_zero(int len);
