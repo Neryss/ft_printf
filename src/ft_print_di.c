@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 15:58:23 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 19:41:11 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	dot_size_greater_else(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	elem->zero = 0;
@@ -36,11 +36,11 @@ static	int	dot_size_greater_else(t_element *elem, char *str, int len)
 
 static	int	print_dot_else(t_element *elem, char *str, int len)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (elem->dot_size >= len)
-		dot_size_greater_else(elem, str, len);
+		i += dot_size_greater_else(elem, str, len);
 	else
 	{
 		elem->zero = 0;
@@ -72,7 +72,7 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 		{
 			i += ft_putchar('-');
 			i += print_width(elem, len);
-			i += ft_putstr(str + 1 );
+			i += ft_putstr(str + 1);
 		}
 		else
 		{
@@ -91,42 +91,16 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	if (elem->dot)
 	{
 		if (elem->dot_size >= len)
-		{
-			if (str[0] == '-')
-			{
-				i += ft_putchar('-');
-				i += print_zero(elem->dot_size - len + 1);
-				i += ft_putstrl(str + 1, elem->dot_size);
-				i += print_width(elem, elem->dot_size + 1);
-			}
-			else
-			{
-				i += print_zero(elem->dot_size - len);
-				i += ft_putstr(str);
-				i += print_width(elem, elem->dot_size);
-			}
-		}
+			i += dot_size_greater_justif(elem, str, len);
 		else
-		{
-			if (len == 1 && str[1] == 0)
-			{
-				i += ft_putstrl(str, elem->dot_size);
-				i += print_width(elem, elem->dot_size);
-			}
-			else
-			{
-				i += ft_putstr(str);
-				i += print_width(elem, len);
-			}
-		}
-		
+			i += dot_else_justif(elem, str, len);
 	}
 	else
 	{
 		if (str[0] == '-')
 		{
 			i += ft_putchar('-');
-			i += ft_putstr(str + 1 );
+			i += ft_putstr(str + 1);
 			i += print_width(elem, len);
 		}
 		i += ft_putstr(str);
@@ -134,11 +108,6 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 	}
 	return (i);
 }
-
-// int			print_negative(char *str, int len)
-// {
-	 
-// }
 
 int			ft_print_di(t_element *elem, int nb)
 {

@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/12 17:39:37 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/25 12:07:28 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/26 19:20:30 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,7 @@ SRCS = src/ft_printf.c \
 		src/ft_print_x.c \
 		src/ft_print_di.c \
 		src/ft_printp_utils.c \
+		src/ft_print_di_utils.c \
 		src/ft_checks.c 
 OBJS = $(SRCS:.c=.o)
 
