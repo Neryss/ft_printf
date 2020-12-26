@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:59:20 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 21:48:28 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 22:36:45 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int			ft_print_u(t_element *elem, unsigned int nb)
 	(void)elem;
 
 	i = 0;
-	str = ft_itoa(nb);
+	str = ft_uitoa(nb);
 	len = ft_strlen(str);
 	if (elem->left_justify)
 		i += print_u_justif(elem, str, len);

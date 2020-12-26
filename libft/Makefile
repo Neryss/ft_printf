@@ -6,7 +6,7 @@
 #    By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/23 13:34:22 by ckurt             #+#    #+#              #
-#    Updated: 2020/12/22 12:03:26 by ckurt            ###   ########lyon.fr    #
+#    Updated: 2020/12/26 22:36:10 by ckurt            ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,6 +100,7 @@ SRCS = ft_memset.c \
 		ft_atoi_base.c \
 		ft_ischarset.c \
 		ft_itoa_base_signed.c \
+		ft_uitoa.c \
 		ft_nblen.c
 OBJS = $(SRCS:.c=.o)
 

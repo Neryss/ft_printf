@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:49:05 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 12:03:12 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 22:35:51 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ char				*ft_putnbr_base(int nb, char *base);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(size_t n, char *base);
 char				*ft_itoa_base_signed(long long n, char *base);
+char				*ft_uitoa(unsigned int nb);
 
 void				*ft_calloc(size_t count, size_t size);
 void				*ft_freeall(char **tab, int size);
