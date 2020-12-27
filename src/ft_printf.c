@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 14:52:05 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 15:42:39 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ int	general_parsing(va_list valist, const char *str, t_element *elem)
 		if (*str == '%')
 		{
 			init_struct(elem);
-			str += check_flags(str, elem, valist) + 1;
+			str += check_flags(str, elem, valist);
 			print += select_parsing(valist, elem);
+			str++;
 		}
 		else
 		{
@@ -42,8 +43,8 @@ int	select_parsing(va_list valist, t_element *elem)
 	// debug_struct(elem);
 	if (elem->type == 'c')
 		return (ft_print_char(elem, valist));
-	// if (elem->type == '%')
-	// 	return (ft_print_percent(elem));
+	if (elem->type == '%')
+		return (ft_print_percent(elem));
 	if (elem->type == 's')
 		return (ft_print_str(elem, va_arg(valist, char *)));
 	if (elem->type == 'p')

@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 14:51:56 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 16:09:12 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,14 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 int			get_memberlen(const char *str, t_element *elem, int i)
 {
 	while (!ft_ischarset(str[i], ARGUMENTS) && str[i])
+	{
 		i++;
+		if (str[i] == '%')
+		{
+			elem->type = str[i];
+			return (i);
+		}
+	}
 	elem->type = str[i];
 	return (i);
 }
