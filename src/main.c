@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	r = ft_printf("[ %3u ]", 1);
+	r = ft_printf("[ %5c ]", 'c');
 	ft_printf("\n");
-	d = printf("[ %3u ]", 1);
+	d = printf("[ %5c ]", 'c');
 
 	printf("\nme  return %d\n", r);
 	printf("lib return %d\n", d);

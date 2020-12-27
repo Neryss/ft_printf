@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 20:11:53 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 13:05:38 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft/libft.h"
 # include <stdarg.h>
-# define ARGUMENTS "cspdiuxX"
+# define ARGUMENTS "cspdiuxX%"
 
 typedef	struct	s_element
 {
@@ -43,6 +43,7 @@ int				special_atoi(const char *str);
 void			init_struct(t_element *elem);
 void			debug_struct(t_element *elem);
 int				ft_print_char(t_element *elem, va_list valist);
+int				ft_print_percent(t_element *elem);
 int				ft_print_str(t_element *elem, char *str);
 int				ft_print_p(t_element *elem, size_t nb);
 int				ft_print_x(t_element *elem, unsigned int nb, char *base);
