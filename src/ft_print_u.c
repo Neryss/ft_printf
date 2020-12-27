@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:59:20 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 01:32:10 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 01:49:13 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,23 @@ static	int	print_u_justif(t_element *elem, char *str, int len)
 		}
 		else
 		{
-			i += print_zero(elem->dot_size - len);
-			i += ft_putstr(str);
-			i += print_width(elem, len);
+			if (len == 1 && str[1] == 0)
+			{
+				i += ft_putstrl(str, elem->dot_size);
+				i += print_width(elem, elem->dot_size);
+			}
+			else
+			{
+				i += print_zero(elem->dot_size - len);
+				i += ft_putstr(str);
+				i += print_width(elem, len);
+			}
 		}
 	}
 	else
 	{
-		i += print_width(elem, len);
 		i += ft_putstr(str);
+		i += print_width(elem, len);
 	}
 	return (i);
 }
@@ -50,14 +58,22 @@ static	int	print_u_else(t_element *elem, char *str, int len)
 		elem->zero = 0;
 		if (elem->dot_size > len)
 		{
+			i += print_width(elem, elem->dot_size);
 			i += print_zero(elem->dot_size - len);
 			i += ft_putstr(str);
-			i += print_width(elem, elem->dot_size);
 		}
 		else
 		{
-			i += print_width(elem, elem->dot_size);
-			i += ft_putstrl(str, elem->dot_size);
+			if (len == 1 && str[1] == 0)
+			{
+				i += ft_putstrl(str, elem->dot_size);
+				i += print_width(elem, elem->dot_size);
+			}
+			else
+			{
+				i += print_width(elem, len);
+				i += ft_putstr(str);
+			}
 		}
 	}
 	else
