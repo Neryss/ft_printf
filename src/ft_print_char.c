@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 12:59:40 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/25 12:01:12 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 16:39:03 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ int	special_atoi(const char *str)
 	res = 0;
 	//might need to add whitespaces later
 	//not sure about the '%'
-	while (str[i] == '0' || str[i] == '-' || str[i] == '%')
+	while (str[i] == '0' || str[i] == '-')
 		i++;
 	while (ft_isdigit(str[i]))
 	{
 		res = res * 10 + (str[i] - 48);
 		i++;
 	}
+	printf("heyo res is the following [%d]", res);
 	return (res);
 }
 
