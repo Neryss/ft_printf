@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 09:35:29 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/25 11:51:31 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 13:20:23 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_minus(const char *str, t_element *elem)
 		}
 		i++;
 	}
-	return (-1);
+	return (0);
 }
 
 int	check_zero(const char *str, t_element *elem)
