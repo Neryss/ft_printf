@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 13:16:11 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 14:52:33 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft/libft.h"
 # include <stdarg.h>
-# define ARGUMENTS "cspdiuxX%"
+# define ARGUMENTS "cspdiuxX"
 
 typedef	struct	s_element
 {

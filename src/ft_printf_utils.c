@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 14:47:42 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 14:51:56 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 	}
 	if (elem->dot_size < 0)
 		elem->dot = 0;
-	i = get_memberlen(str, elem, i + 1);
+	i = get_memberlen(str, elem, i);
 	if (i == 0)
 		return (1);
 	return (i);
