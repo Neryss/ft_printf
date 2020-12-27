@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:59:20 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 22:36:45 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 01:18:07 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,21 +21,21 @@ static	int	print_u_justif(t_element *elem, char *str, int len)
 	{
 		if (elem->dot_size > len)
 		{
-			i += ft_putstr(str);
 			i += print_zero(elem->dot_size - len);
+			i += ft_putstr(str);
 			i += print_width(elem, len + 1);
 		}
 		else
 		{
 			elem->zero = 1;
-			i += ft_putstrl(str, elem->dot_size);
 			i += print_width(elem, elem->dot_size);
+			i += ft_putstrl(str, elem->dot_size);
 		}
 	}
 	else
 	{
-		i += ft_putstr(str);
 		i += print_width(elem, len);
+		i += ft_putstr(str);
 	}
 	return (i);
 }
@@ -73,7 +73,6 @@ int			ft_print_u(t_element *elem, unsigned int nb)
 	char	*str;
 	int		len;
 	int		i;
-	(void)elem;
 
 	i = 0;
 	str = ft_uitoa(nb);
