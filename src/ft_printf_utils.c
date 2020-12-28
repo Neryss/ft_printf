@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/23 13:40:19 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/28 16:19:04 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 {
 	int		i;
 
-	i = 0;
-	check_minus(str, elem);
-	check_zero(str, elem);
-	check_star(str, elem, valist);
+	i = 1;
+	check_minus(str + 1, elem);
+	check_zero(str + 1, elem);
+	check_star(str + 1, elem, valist);
 	if (!elem->dot)
 	{
-		elem->dot_size = check_dot(str, elem);
+		elem->dot_size = check_dot(str + 1, elem);
 		if (!elem->width)
-			elem->width = special_atoi(str);
+			elem->width = special_atoi(str + 1);
 	}
 	if (elem->width < 0)
 	{
@@ -101,7 +101,7 @@ int			check_flags(const char *str, t_element *elem, va_list valist)
 	i = get_memberlen(str, elem, i);
 	if (i == 0)
 		return (1);
-	return (i);
+	return (i + 1);
 }
 
 int			get_memberlen(const char *str, t_element *elem, int i)
