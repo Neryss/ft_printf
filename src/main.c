@@ -5,9 +5,9 @@
 int main(int argc, char *argv[])
 {
 	int r, d = 0;
-	r = ft_printf("%07d", -54);
+	r = ft_printf("%% *.5i 42 == |% *.5i|", 4, 42);
 	ft_printf("\n");
-	d = printf("%07d", -54);
+	d = printf("%% *.5i 42 == |% *.5i|", 4, 42);
 
 	printf("\nme  return %d\n", r);
 	printf("lib return %d\n", d);
