@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 19:41:11 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/28 18:19:08 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 	{
 		if (str[0] == '-')
 		{
-			i += ft_putchar('-');
 			i += print_width(elem, len);
+			i += ft_putchar('-');
 			i += ft_putstr(str + 1);
 		}
 		else
@@ -103,8 +103,11 @@ static	int	print_di_justify(t_element *elem, char *str, int len)
 			i += ft_putstr(str + 1);
 			i += print_width(elem, len);
 		}
-		i += ft_putstr(str);
-		i += print_width(elem, len);
+		else
+		{
+			i += ft_putstr(str);
+			i += print_width(elem, len);
+		}
 	}
 	return (i);
 }
