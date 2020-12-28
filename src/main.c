@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
 	int		m = -12345678;
 
 	int eheh, oui = 0;
-	eheh = ft_printf("%0.i", i);
+	eheh = ft_printf("%-.d", l);
 	ft_printf("\n");
-	oui = printf("%0.i", i);
+	oui = printf("%-.d", l);
 
 	printf("\nme  return %d\n", eheh);
 	printf("lib return %d\n", oui);

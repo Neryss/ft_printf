@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/25 13:27:31 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/26 19:21:09 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/28 22:56:19 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	dot_else_justif(t_element *elem, char *str, int len)
 	int		i;
 
 	i = 0;
-	if (len == 1 && str[1] == 0)
+	if (len == 1 && str[0] == '0')
 	{
 		i += ft_putstrl(str, elem->dot_size);
 		i += print_width(elem, elem->dot_size);
