@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:59:20 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 01:49:13 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/27 01:51:07 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ static	int	print_u_else(t_element *elem, char *str, int len)
 		{
 			if (len == 1 && str[1] == 0)
 			{
-				i += ft_putstrl(str, elem->dot_size);
 				i += print_width(elem, elem->dot_size);
+				i += ft_putstrl(str, elem->dot_size);
 			}
 			else
 			{

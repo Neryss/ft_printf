@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 13:00:16 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/26 20:12:20 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ int	select_parsing(va_list valist, t_element *elem)
 
 	i = 0;
 	// debug_struct(elem);
-	// if (elem->type == '%')
-	// 	return (ft_print_percent(elem));
 	if (elem->type == 'c')
 		return (ft_print_char(elem, valist));
 	if (elem->type == 's')
