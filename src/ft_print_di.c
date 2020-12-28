@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 18:48:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/28 18:36:33 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/28 19:13:05 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,11 @@ static	int	print_di_else(t_element *elem, char *str, int len)
 
 	i = 0;
 	if (elem->dot)
+	{
+			printf("yo");
 		i += print_dot_else(elem, str, len);
+		
+	}
 	else
 	{
 		if (str[0] == '-')
