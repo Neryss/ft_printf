@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/27 12:42:33 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 13:02:45 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/28 16:23:35 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int		ft_print_percent(t_element *elem)
 			i += ft_putchar('%');
 		}
 	}
-	return (i + 1);
+	return (i);
 }
