@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:03 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/28 22:35:07 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 15:45:00 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,9 @@ int	general_parsing(va_list valist, const char *str, t_element *elem)
 
 int	select_parsing(va_list valist, t_element *elem)
 {
-	int i;
+	int		i;
 
 	i = 0;
-	// debug_struct(elem);
 	if (elem->type == 'c')
 		return (ft_print_char(elem, valist));
 	if (elem->type == '%')
@@ -49,11 +48,9 @@ int	select_parsing(va_list valist, t_element *elem)
 	if (elem->type == 'p')
 		return (ft_print_p(elem, va_arg(valist, size_t)));
 	if (elem->type == 'x')
-		return (ft_print_x(elem, va_arg(valist, unsigned int),
-		"0123456789abcdef"));
+		return (ft_print_x(elem, va_arg(valist, unsigned int), LOW_X));
 	if (elem->type == 'X')
-		return (ft_print_x(elem, va_arg(valist, unsigned int),
-		"0123456789ABCDEF"));
+		return (ft_print_x(elem, va_arg(valist, unsigned int), UPP_X));
 	if (elem->type == 'd')
 		return (ft_print_di(elem, va_arg(valist, int)));
 	if (elem->type == 'i')

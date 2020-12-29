@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 13:15:48 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/28 18:10:29 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 15:48:56 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,32 +23,6 @@ void		init_struct(t_element *elem)
 	elem->sign = 0;
 	elem->type = 0;
 	elem->star = 0;
-}
-
-void		debug_struct(t_element *elem)
-{
-	ft_putstr("| ELEMENT |\n");
-	ft_putstr("| ------- |\n");
-	ft_putstr("|Zero : ");
-	ft_putnbr(elem->zero);
-	ft_putstr("|\n|Width : ");
-	ft_putnbr(elem->width);
-	ft_putstr("|\n|Field : ");
-	ft_putnbr(elem->field);
-	ft_putstr("|\n|Justify : ");
-	ft_putnbr(elem->left_justify);
-	ft_putstr("|\n|Dot : ");
-	ft_putnbr(elem->dot);
-	ft_putstr("|\n|Dot size: ");
-	ft_putnbr(elem->dot_size);
-	ft_putstr("|\n|Sign : ");
-	ft_putnbr(elem->sign);
-	ft_putstr("|\n|Type : ");
-	ft_putchar(elem->type);
-	ft_putstr("|\n|Star : ");
-	ft_putnbr(elem->star);
-	ft_putstr("|\n| ------ |");
-	ft_putstr("\n| END |\n");
 }
 
 int			check_dot(const char *str, t_element *elem)

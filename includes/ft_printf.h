@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/28 16:24:29 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 15:48:48 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "../libft/libft.h"
 # include <stdarg.h>
 # define ARGUMENTS "cspdiuxX%"
+# define LOW_X "0123456789abcdef"
+# define UPP_X "0123456789ABCDEF"
 
 typedef	struct	s_element
 {
@@ -49,6 +51,7 @@ int				ft_print_percent(t_element *elem);
 int				ft_print_x(t_element *elem, unsigned int nb, char *base);
 int				ft_print_di(t_element *elem, int nb);
 int				ft_print_u(t_element *elem, unsigned int nb);
+int				is_zero_dielse(t_element *elem, char *str, int len);
 int				dot_else_justif(t_element *elem, char *str, int len);
 int				dot_size_greater_justif(t_element *elem, char *str, int len);
 int				print_zero(int len);

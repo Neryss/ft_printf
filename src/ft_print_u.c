@@ -6,11 +6,30 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 19:59:20 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/28 22:56:50 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 15:46:25 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
+
+static	int	x_dot_else_justif(t_element *elem, char *str, int len)
+{
+	int		i;
+
+	i = 0;
+	if (len == 1 && str[0] == '0')
+	{
+		i += ft_putstrl(str, elem->dot_size);
+		i += print_width(elem, elem->dot_size);
+	}
+	else
+	{
+		i += print_zero(elem->dot_size - len);
+		i += ft_putstr(str);
+		i += print_width(elem, len);
+	}
+	return (i);
+}
 
 static	int	print_u_justif(t_element *elem, char *str, int len)
 {
@@ -26,24 +45,30 @@ static	int	print_u_justif(t_element *elem, char *str, int len)
 			i += print_width(elem, elem->dot_size);
 		}
 		else
-		{
-			if (len == 1 && str[0] == '0')
-			{
-				i += ft_putstrl(str, elem->dot_size);
-				i += print_width(elem, elem->dot_size);
-			}
-			else
-			{
-				i += print_zero(elem->dot_size - len);
-				i += ft_putstr(str);
-				i += print_width(elem, len);
-			}
-		}
+			i += x_dot_else_justif(elem, str, len);
 	}
 	else
 	{
 		i += ft_putstr(str);
 		i += print_width(elem, len);
+	}
+	return (i);
+}
+
+static	int	x_dot_else_else(t_element *elem, char *str, int len)
+{
+	int		i;
+
+	i = 0;
+	if (len == 1 && str[0] == '0')
+	{
+		i += print_width(elem, elem->dot_size);
+		i += ft_putstrl(str, elem->dot_size);
+	}
+	else
+	{
+		i += print_width(elem, len);
+		i += ft_putstr(str);
 	}
 	return (i);
 }
@@ -63,18 +88,7 @@ static	int	print_u_else(t_element *elem, char *str, int len)
 			i += ft_putstr(str);
 		}
 		else
-		{
-			if (len == 1 && str[0] == '0')
-			{
-				i += print_width(elem, elem->dot_size);
-				i += ft_putstrl(str, elem->dot_size);
-			}
-			else
-			{
-				i += print_width(elem, len);
-				i += ft_putstr(str);
-			}
-		}
+			i += x_dot_else_else(elem, str, len);
 	}
 	else
 	{
