@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 21:49:04 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/27 01:15:41 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2020/12/29 20:46:25 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ static int		ft_itoa_getsize(unsigned n)
 	return (count);
 }
 
-char	*ft_uitoa(unsigned int nb)
+char			*ft_uitoa(unsigned int nb)
 {
-	char	*res;
+	char		*res;
 	long int	n;
-	int		count;
-	int		i;
+	int			count;
+	int			i;
 
 	n = (long)nb;
 	i = 0;
