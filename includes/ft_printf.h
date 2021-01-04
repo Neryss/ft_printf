@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 13:02:59 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/29 20:38:08 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 11:03:44 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int				check_dot(const char *str, t_element *elem);
 int				is_dot_first(const char *str);
 int				get_memberlen(const char *str, t_element *elem, int i);
 int				special_atoi(const char *str);
-void			init_struct(t_element *elem);
-void			debug_struct(t_element *elem);
 int				ft_print_char(t_element *elem, va_list valist);
 int				ft_print_str(t_element *elem, char *str);
 int				ft_print_p(t_element *elem, size_t nb);
@@ -56,5 +54,6 @@ int				dot_else_justif(t_element *elem, char *str, int len);
 int				dot_size_greater_justif(t_element *elem, char *str, int len);
 int				print_zero(int len);
 int				select_parsing(va_list valist, t_element *elem);
+void			init_struct(t_element *elem);
 
 #endif
