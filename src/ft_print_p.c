@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 12:21:16 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/22 12:20:33 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 12:15:29 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,5 +101,6 @@ int			ft_print_p(t_element *elem, size_t nb)
 		i += print_p_justify(elem, str, len);
 	else
 		i += print_p_else(elem, str, len);
+	free(str);
 	return (i);
 }
