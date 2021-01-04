@@ -55,14 +55,16 @@ static	int	print_else(t_element *elem, char *str, int len)
 int			ft_print_str(t_element *elem, char *str)
 {
 	int		i;
+	int		alloc;
 	int		len;
 
 	i = 0;
+	alloc = 0;
 	if (str)
 		len = ft_strlen(str);
 	if (str == NULL)
 	{
-		free(str);
+		alloc = 1;
 		str = ft_strdup("(null)");
 		len = ft_strlen(str);
 	}
@@ -70,6 +72,7 @@ int			ft_print_str(t_element *elem, char *str)
 		i += print_justify(elem, str, len);
 	else
 		i += print_else(elem, str, len);
-	free(str);
+	if (alloc)
+		free(str);
 	return (i);
 }
