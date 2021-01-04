@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2020/12/29 15:10:32 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 12:19:53 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ int			ft_print_x(t_element *elem, unsigned int nb, char *base)
 		i += print_x_justify(elem, str, len);
 	else
 		i += print_x_else(elem, str, len);
-	str = NULL;
 	free(str);
 	return (i);
 }
