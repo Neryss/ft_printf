@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/21 13:14:59 by ckurt             #+#    #+#             */
-/*   Updated: 2021/01/04 12:48:07 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 12:50:44 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,10 @@ char		*ft_itoa_base(size_t n, char *base)
 	if (!(res = ft_calloc(count + 1, sizeof(char))))
 		return (NULL);
 	if (n == 0)
+	{
 		res[0] = '0';
+		return (res);
+	}
 	while (count > 0)
 	{
 		res[--count] = base[n % base_len];
