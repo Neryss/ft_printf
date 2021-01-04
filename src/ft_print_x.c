@@ -6,7 +6,7 @@
 /*   By: ckurt <ckurt@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/22 10:22:52 by ckurt             #+#    #+#             */
-/*   Updated: 2021/01/04 12:19:53 by ckurt            ###   ########lyon.fr   */
+/*   Updated: 2021/01/04 12:45:15 by ckurt            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ int			ft_print_x(t_element *elem, unsigned int nb, char *base)
 	i = 0;
 	str = ft_itoa_base(nb, base);
 	len = ft_strlen(str);
+	if (len == 0)
+		len = 1;
 	if (elem->left_justify)
 		i += print_x_justify(elem, str, len);
 	else
