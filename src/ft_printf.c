@@ -36,9 +36,6 @@ int	general_parsing(va_list valist, const char *str, t_element *elem)
 
 int	select_parsing(va_list valist, t_element *elem)
 {
-	int		i;
-
-	i = 0;
 	if (elem->type == 'c')
 		return (ft_print_char(elem, valist));
 	if (elem->type == '%')

@@ -14,10 +14,8 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned long	i;
 	char			*array;
 
-	i = 0;
 	if (!(array = (malloc(count * size))))
 		return (NULL);
 	ft_bzero(array, size * count);

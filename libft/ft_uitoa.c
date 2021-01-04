@@ -17,8 +17,6 @@ static int		ft_itoa_getsize(unsigned n)
 	int			count;
 
 	count = 0;
-	if (n < 0)
-		n *= -1;
 	while (n)
 	{
 		n /= 10;
@@ -32,10 +30,8 @@ char			*ft_uitoa(unsigned int nb)
 	char		*res;
 	long int	n;
 	int			count;
-	int			i;
 
 	n = (long)nb;
-	i = 0;
 	count = ft_itoa_getsize(n);
 	if (count == 0)
 		count++;

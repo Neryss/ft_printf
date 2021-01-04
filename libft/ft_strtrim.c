@@ -40,12 +40,10 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int			tlen;
 	int			i;
 	int			j;
-	int			wlen;
 	char		*tstr;
 
 	i = 0;
 	j = 0;
-	wlen = 0;
 	tlen = get_trimmed_len(s1, set);
 	if (!(tstr = malloc(sizeof(char) * (tlen + 1))))
 		return (0);
